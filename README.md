@@ -1,8 +1,8 @@
-![preview Long Haul](/preview.jpg)
+![preview kth0813](/preview.jpg)
 
-Long Haul is a minimal jekyll theme built with SASS / GULP / BROWSERSYNC / AUTOPREFIXER and focuses on long form blog posts. It is meant to be used as a starting point for a jekyll blog/website.
+kth0813 is a minimal jekyll theme built with SASS / GULP / BROWSERSYNC / AUTOPREFIXER and focuses on long form blog posts. It is meant to be used as a starting point for a jekyll blog/website.
 
-If you really enjoy Long Haul and want to give me credit somewhere on the internet send or tweet out your experience with Long Haul and tag me [@brianmaierjr](https://twitter.com/brianmaierjr).
+If you really enjoy kth0813 and want to give me credit somewhere on the internet send or tweet out your experience with kth0813 and tag me [@brianmaierjr](https://twitter.com/brianmaierjr).
 
 #### [View Demo](http://brianmaierjr.com/long-haul)
 
@@ -22,12 +22,12 @@ If you really enjoy Long Haul and want to give me credit somewhere on the intern
 - Stylish Drop Cap on posts
 - A Better Type Scale for all devices
 - Comments powered by Disqus
-- [Dark Mode support](https://github.com/brianmaierjr/long-haul/blob/master/preview-dark.png) via [prefers-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) 
+- [Dark Mode support](https://github.com/brianmaierjr/long-haul/blob/master/preview-dark.png) via [prefers-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)
 
 ## Setup
 
 1. [Install Jekyll](http://jekyllrb.com)
-2. Fork the [Long Haul repo](http://github.com/brianmaierjr/long-haul)
+2. Fork the [kth0813 repo](http://github.com/brianmaierjr/long-haul)
 3. Clone it
 4. [Install Bundler](http://bundler.io/)
 5. Run `bundle install`
@@ -49,11 +49,11 @@ The main settings can be found inside the `_config.yml` file:
 
 ### Header Option
 
-If you'd like your header to be larger then you can use the option below in you `config.yml` to make it take up half of the vertical space on screens 800px wide and up. *Preview image below.*
+If you'd like your header to be larger then you can use the option below in you `config.yml` to make it take up half of the vertical space on screens 800px wide and up. _Preview image below._
 
 - **header:** large
 
-![preview Long Haul](/preview-large.png)
+![preview kth0813](/preview-large.png)
 
 ## License
 
