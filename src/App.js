@@ -1,13 +1,14 @@
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import BoardList from "./pages/contents/BoardList";
+import Main from "./pages/main/Main";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-      하이
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="" element={<Main />} />
+        <Route path="/contents/board" element={<BoardList />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;
