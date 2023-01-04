@@ -1,4 +1,4 @@
-title: Long Haul
+title: kth0813
 description: Long Form Jekyll theme built with SASS / COMPASS / SUSY
 
 url: https://long-haul.netlify.app
@@ -31,4 +31,4 @@ social:
 google_analytics: "UA-58263416-1"
 
 disqus:
-    shortname: brianmaierjr
+  shortname: brianmaierjr
