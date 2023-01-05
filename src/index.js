@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
 import Header from "./pages/main/Header";
 import SideMenu from "./pages/main/SideMenu";
 import Footer from "./pages/main/Footer";
@@ -29,4 +28,3 @@ root.render(
     </div>
   </React.StrictMode>
 );
-reportWebVitals();
