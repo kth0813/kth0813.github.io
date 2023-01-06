@@ -10,21 +10,20 @@ root.render(
   <React.StrictMode>
     <div
       style={{
-        display: "grid",
-        gridTemplateColumns: "200px 1fr",
-        gridTemplateRows: "150px 600px 150px",
+        display: "flex",
+        minHeight: "100vh",
+        width: "80vw",
+        justifyContent: "center",
+        margin: "0 auto",
+        flexWrap: "wrap",
       }}
     >
-      <div style={{ gridColumn: "span 2" }}>
-        <Header />
-      </div>
+      <Header />
       <SideMenu />
-      <div>
+      <div style={{ flexGrow: 1, minHeight: "80vh" }}>
         <App />
       </div>
-      <div style={{ gridColumn: "span 2" }}>
-        <Footer />
-      </div>
+      <Footer />
     </div>
   </React.StrictMode>
 );
