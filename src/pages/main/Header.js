@@ -16,51 +16,45 @@ export default function Header() {
 
   return (
     <div style={{ width: "100%", height: "100%", border: "1px solid black" }}>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr" }}>
+      <div
+        style={{
+          display: "grid",
+          gridGap: "50px",
+          gridTemplateColumns: "1fr 1fr 1fr",
+        }}
+      >
         <div style={{ gridColumn: "span 3" }}>블로그이름</div>
-        <div onMouseOver={mouseOverSub(0)} onMouseOut={mouseOutSub(0)}>
+        <div
+          onMouseOver={() => mouseOverSub(0)}
+          onMouseOut={() => mouseOutSub(0)}
+          style={{ border: "1px solid black" }}
+        >
           메뉴1
-          <div
-            style={showSub[0] ? { display: "block" } : { display: "none" }}
-            onClick={changePath("/contents/board")}
-          >
-            서브메뉴1
-          </div>
-          <div
-            style={showSub[0] ? { display: "block" } : { display: "none" }}
-            onClick={changePath("/contents/board")}
-          >
-            서브메뉴2
+          <div style={showSub[0] ? { display: "block" } : { display: "none" }}>
+            <div onClick={changePath("/contents/board")}>서브메뉴1</div>
+            <div onClick={changePath("/contents/board")}>서브메뉴2</div>
           </div>
         </div>
-        <div onMouseOver={mouseOverSub(1)} onMouseOut={mouseOutSub(1)}>
+        <div
+          onMouseOver={() => mouseOverSub(1)}
+          onMouseOut={() => mouseOutSub(1)}
+          style={{ border: "1px solid black" }}
+        >
           메뉴2
-          <div
-            style={showSub[1] ? { display: "block" } : { display: "none" }}
-            onClick={changePath("/contents/board")}
-          >
-            서브메뉴1
-          </div>
-          <div
-            style={showSub[1] ? { display: "block" } : { display: "none" }}
-            onClick={changePath("/contents/board")}
-          >
-            서브메뉴2
+          <div style={showSub[1] ? { display: "block" } : { display: "none" }}>
+            <div onClick={changePath("/contents/board")}>서브메뉴1</div>
+            <div onClick={changePath("/contents/board")}>서브메뉴2</div>
           </div>
         </div>
-        <div onMouseOver={mouseOverSub(2)} onMouseOut={mouseOutSub(2)}>
+        <div
+          onMouseOver={() => mouseOverSub(2)}
+          onMouseOut={() => mouseOutSub(2)}
+          style={{ border: "1px solid black" }}
+        >
           메뉴3
-          <div
-            style={showSub[2] ? { display: "block" } : { display: "none" }}
-            onClick={changePath("/contents/board")}
-          >
-            서브메뉴1
-          </div>
-          <div
-            style={showSub[2] ? { display: "block" } : { display: "none" }}
-            onClick={changePath("/contents/board")}
-          >
-            서브메뉴2
+          <div style={showSub[2] ? { display: "block" } : { display: "none" }}>
+            <div onClick={changePath("/contents/board")}>서브메뉴1</div>
+            <div onClick={changePath("/contents/board")}>서브메뉴2</div>
           </div>
         </div>
       </div>
