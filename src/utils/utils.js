@@ -6,9 +6,9 @@ import React from "react";
 /* eslint no-restricted-globals: ["off"] */
 export const changePath = (path, state) => {
   if (location.pathname == path) return;
-  history.push(path, state);
+  history.pushState(path, state);
 };
 export const replacePath = (path, state) => {
   if (location.pathname == path) return;
-  history.replace(path, state);
+  history.replaceState(path, state);
 };
