@@ -5,7 +5,6 @@ export default function Main() {
     <div
       style={{
         width: "100%",
-        borderRight: "1px solid black",
         textAlign: "center",
         padding: "40vh 0 ",
       }}

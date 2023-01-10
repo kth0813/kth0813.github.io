@@ -1,19 +1,24 @@
 import { useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
+import Layout from "./Layout";
 import BoardList from "./pages/contents/BoardList";
 import Main from "./pages/main/Main";
-import { changePath } from "./utils/utils";
 
 export default function App() {
-  useEffect(() => {
-    changePath("/contents/board");
-  }, []);
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
-        <Route path="" element={<Main />} />
-        <Route path="/contents/board" element={<BoardList />} />
+        <Route element={<Layout />}>
+          <Route exact path="" element={<Main />} />
+          <Route exact path="/main" element={<Main />} />
+          <Route exact path="/contents/board" element={<BoardList />} />
+        </Route>
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
