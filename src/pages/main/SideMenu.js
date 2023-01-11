@@ -1,35 +1,9 @@
 import React from "react";
 import { useLocation } from "react-router";
 
-export default function SideMenu() {
+export default function SideMenu(props) {
   const location = useLocation();
-  const MenuList = [
-    { addr: "main", name: "메인메뉴" },
-    {
-      addr: "contents",
-      name: "게시판",
-      sub: [
-        { addr: "board", name: "게시판1" },
-        { addr: "board2", name: "게시판2" },
-      ],
-    },
-    {
-      addr: "main2",
-      name: "메뉴2",
-      sub: [
-        { addr: "sub1", name: "게시판1" },
-        { addr: "sub2", name: "게시판2" },
-      ],
-    },
-    {
-      addr: "main3",
-      name: "메뉴3",
-      sub: [
-        { addr: "sub1", name: "게시판1" },
-        { addr: "sub2", name: "게시판2" },
-      ],
-    },
-  ];
+  const MenuList = props.MenuList;
   return (
     <div
       style={{
@@ -39,41 +13,37 @@ export default function SideMenu() {
         borderLeft: "1px solid black",
       }}
     >
-      {JSON.stringify(location?.pathname.split("/")[1])}
-      {JSON.stringify(location?.pathname.split("/")[2])}
-
       <div
         style={{
           textAlign: "center",
         }}
       >
-        {MenuList.map((item) => {
-          if (item.addr == location?.pathname?.split("/")[1])
-            return (
-              <div
-                style={{
-                  margin: "30px 0 ",
-                  fontSize: "20px",
-                }}
-              >
-                {item.name}
-              </div>
-            );
-        })}
-        <div
-          style={{
-            margin: "30px 0 ",
-          }}
-        >
-          서브메뉴1
-        </div>
-        <div
-          style={{
-            margin: "30px 0 ",
-          }}
-        >
-          서브메뉴2
-        </div>
+        {MenuList.filter(
+          (item) => item.addr == location?.pathname?.split("/")[1]
+        ).map((item, index) => (
+          <div>
+            <div
+              style={{
+                margin: "30px 0 ",
+                fontSize: "20px",
+              }}
+              key={index}
+            >
+              {item.name}
+            </div>
+            {item.sub &&
+              item.sub.map((item2, index2) => (
+                <div
+                  key={index2}
+                  style={{
+                    margin: "30px 0 ",
+                  }}
+                >
+                  {item2.name}
+                </div>
+              ))}
+          </div>
+        ))}
       </div>
     </div>
   );

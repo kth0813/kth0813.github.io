@@ -3,6 +3,33 @@ import Header from "./pages/main/Header";
 import SideMenu from "./pages/main/SideMenu";
 import Footer from "./pages/main/Footer";
 const Layout = () => {
+  const MenuList = [
+    { addr: "main", name: "메인메뉴" },
+    {
+      addr: "contents",
+      name: "게시판",
+      sub: [
+        { addr: "board1", name: "게시판1" },
+        { addr: "board2", name: "게시판2" },
+      ],
+    },
+    {
+      addr: "menu2",
+      name: "메뉴2",
+      sub: [
+        { addr: "sub1", name: "게시판2-1" },
+        { addr: "sub2", name: "게시판2-2" },
+      ],
+    },
+    {
+      addr: "menu3",
+      name: "메뉴3",
+      sub: [
+        { addr: "sub1", name: "게시판3-1" },
+        { addr: "sub2", name: "게시판3-2" },
+      ],
+    },
+  ];
   return (
     <div
       style={{
@@ -14,8 +41,8 @@ const Layout = () => {
         flexWrap: "wrap",
       }}
     >
-      <Header />
-      <SideMenu />
+      <Header MenuList={MenuList} />
+      <SideMenu MenuList={MenuList} />
       <div
         style={{
           flexGrow: 1,

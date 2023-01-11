@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { changePath } from "../../utils/utils";
 import { useNavigate } from "react-router-dom";
-export default function Header() {
+export default function Header(props) {
+  const MenuList = props.MenuList;
   const navigate = useNavigate();
   const [showSub, setShowSub] = useState([false, false, false]);
   const toggleSub = (index, on) => {
@@ -31,130 +32,50 @@ export default function Header() {
           top: "10px",
         }}
       >
-        <div
-          style={{
-            margin: "0 10px",
-            width: "150px",
-            textAlign: "center",
-            fontSize: "20px",
-          }}
-          onClick={() => navigate("/main")}
-        >
-          메인메뉴
-        </div>
-        <div
-          style={{
-            margin: "0 10px",
-          }}
-          onMouseOver={() => toggleSub(0, "on")}
-          onMouseOut={() => toggleSub(0)}
-        >
+        {MenuList.map((item, index) => (
           <div
+            key={index}
             style={{
-              width: "150px",
-              textAlign: "center",
-              fontSize: "20px",
+              margin: "0 10px",
             }}
+            onClick={() => (item.sub ? undefined : navigate(item.addr))}
+            onMouseOver={() => toggleSub(index, "on")}
+            onMouseOut={() => toggleSub(index)}
           >
-            게시판
-          </div>
-          {showSub[0] && (
             <div
               style={{
-                border: "1px solid lightgray",
-                backgroundColor: "white",
-                margin: "10px 10px 0",
-                padding: "10px",
+                width: "150px",
                 textAlign: "center",
-                borderRadius: "10px",
+                fontSize: "20px",
               }}
             >
-              <div
-                style={{ margin: "0 0 10px" }}
-                onClick={() => navigate("/contents/board")}
-              >
-                게시판
-              </div>
-              <div onClick={() => navigate("/contents/board")}>게시판</div>
+              {item.name}
             </div>
-          )}
-        </div>
-        <div
-          style={{
-            margin: "0 10px",
-          }}
-          onMouseOver={() => toggleSub(1, "on")}
-          onMouseOut={() => toggleSub(1)}
-        >
-          <div
-            style={{
-              width: "150px",
-              textAlign: "center",
-              backgroundColor: "white",
-              fontSize: "20px",
-            }}
-          >
-            메뉴2
+            {item.sub && showSub[index] && (
+              <div
+                style={{
+                  border: "1px solid lightgray",
+                  backgroundColor: "white",
+                  margin: "10px 10px 0",
+                  padding: "10px",
+                  textAlign: "center",
+                  borderRadius: "10px",
+                }}
+              >
+                {item.sub &&
+                  item.sub.map((item2, index2) => (
+                    <div
+                      key={index2}
+                      style={{ margin: "0 0 10px" }}
+                      onClick={() => navigate(item.addr + "/" + item2.addr)}
+                    >
+                      {item2.name}
+                    </div>
+                  ))}
+              </div>
+            )}
           </div>
-          {showSub[1] && (
-            <div
-              style={{
-                border: "1px solid lightgray",
-                backgroundColor: "white",
-                margin: "10px 10px 0",
-                padding: "10px",
-                textAlign: "center",
-                borderRadius: "10px",
-              }}
-            >
-              <div
-                style={{ margin: "0 0 10px" }}
-                onClick={changePath("/contents/board")}
-              >
-                서브메뉴1
-              </div>
-              <div onClick={changePath("/contents/board")}>서브메뉴2</div>
-            </div>
-          )}
-        </div>
-        <div
-          style={{
-            margin: "0 10px",
-          }}
-          onMouseOver={() => toggleSub(2, "on")}
-          onMouseOut={() => toggleSub(2)}
-        >
-          <div
-            style={{
-              width: "150px",
-              textAlign: "center",
-              backgroundColor: "white",
-              fontSize: "20px",
-            }}
-          >
-            메뉴3
-          </div>
-          {showSub[2] && (
-            <div
-              style={{
-                border: "1px solid lightgray",
-                backgroundColor: "white",
-                margin: "10px 10px 0 ",
-                padding: "10px",
-                textAlign: "center",
-                borderRadius: "10px",
-              }}
-            >
-              <div
-                style={{ margin: "0 0 10px" }}
-                onClick={changePath("/contents/board")}
-              >
-                서브메뉴1
-              </div>
-              <div onClick={changePath("/contents/board")}>서브메뉴2</div>
-            </div>
-          )}
-        </div>
+        ))}
       </div>
     </div>
   );
