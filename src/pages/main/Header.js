@@ -1,81 +1,69 @@
 import React, { useState } from "react";
 import { changePath } from "../../utils/utils";
 import { useNavigate } from "react-router-dom";
-export default function Header(props) {
-  const MenuList = props.MenuList;
+import logo from "../../img/logo.svg";
+
+export default function Header() {
   const navigate = useNavigate();
-  const [showSub, setShowSub] = useState([false, false, false]);
-  const toggleSub = (index, on) => {
-    let sub = [false, false, false];
-    if (on) sub[index] = true;
-    setShowSub(sub);
+  const [searchTerm, setSearchTerm] = useState("");
+  const handleChange = (e) => {
+    e.preventDefault();
+    setSearchTerm(e.target.value);
+  };
+  const onClickSearch = (e) => {
+    e.preventDefault();
+    if (searchTerm == "") return;
+    navigate("/search?param=" + searchTerm);
   };
   return (
-    <div style={{ width: "100%", height: "150px", border: "1px solid black" }}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        width: "100%",
+        backgroundColor: "#4CE3EC",
+        height: "40px",
+      }}
+    >
       <div
-        style={{
-          margin: "30px 0 0",
-          textAlign: "center",
-          fontSize: "50px",
-        }}
         onClick={() => {
           navigate("/main");
         }}
+        style={{ paddingLeft: "5vw" }}
       >
-        kth0813의 블로그
+        <img src={logo} style={{ cursor: "pointer" }} />
       </div>
       <div
         style={{
           display: "flex",
-          position: "relative",
-          justifyContent: "flex-end",
-          top: "10px",
+          paddingRight: "5vw",
+          alignItems: "center",
         }}
       >
-        {MenuList.map((item, index) => (
-          <div
-            key={index}
-            style={{
-              margin: "0 10px",
-            }}
-            onClick={() => (item.sub ? undefined : navigate(item.addr))}
-            onMouseOver={() => toggleSub(index, "on")}
-            onMouseOut={() => toggleSub(index)}
-          >
-            <div
-              style={{
-                width: "150px",
-                textAlign: "center",
-                fontSize: "20px",
-              }}
-            >
-              {item.name}
-            </div>
-            {item.sub && showSub[index] && (
-              <div
-                style={{
-                  border: "1px solid lightgray",
-                  backgroundColor: "white",
-                  margin: "10px 10px 0",
-                  padding: "10px",
-                  textAlign: "center",
-                  borderRadius: "10px",
-                }}
-              >
-                {item.sub &&
-                  item.sub.map((item2, index2) => (
-                    <div
-                      key={index2}
-                      style={{ margin: "0 0 10px" }}
-                      onClick={() => navigate(item.addr + "/" + item2.addr)}
-                    >
-                      {item2.name}
-                    </div>
-                  ))}
-              </div>
-            )}
-          </div>
-        ))}
+        <input
+          type="text"
+          placeholder="검색어를 입력하세요"
+          value={searchTerm}
+          onChange={handleChange}
+          style={{
+            border: "none",
+            height: "100%",
+            padding: "8px",
+          }}
+          onFocus={(e) => {
+            e.target.select();
+          }}
+        />
+        <i
+          className="fas fa-search"
+          style={{
+            cursor: "pointer",
+            padding: "8px",
+            backgroundColor: "white",
+          }}
+          onClick={onClickSearch}
+        />
       </div>
     </div>
   );

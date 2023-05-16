@@ -6,7 +6,8 @@ export default function Main() {
       style={{
         width: "100%",
         textAlign: "center",
-        padding: "40vh 0 ",
+        padding: "40vh 0",
+        fontSize: "100px",
       }}
     >
       메인화면
