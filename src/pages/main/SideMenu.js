@@ -1,8 +1,28 @@
-import React from "react";
-import { useLocation } from "react-router";
-
+import React, { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router";
+import { category, post } from "../contents/data";
+import { changePath } from "../../utils/utils";
 export default function SideMenu() {
+  const navigate = useNavigate();
   const location = useLocation();
+  let search = new URLSearchParams(location.search);
+  const [categoryCounts, setCategoryCounts] = useState({});
+
+  useEffect(() => {
+    const counts = post.reduce((accumulator, item) => {
+      const { category } = item;
+      if (category) {
+        return { ...accumulator, [category]: (accumulator[category] || 0) + 1 };
+      }
+      return accumulator;
+    }, {});
+    setCategoryCounts(counts);
+  }, []);
+
+  const onMove = (category) => (e) => {
+    e.preventDefault();
+    navigate("/list?category=" + category);
+  };
   return (
     <div
       style={{
@@ -21,21 +41,31 @@ export default function SideMenu() {
         }}
       />
       <ul className="widget_content">
-        <li className="active">
-          <a href="#">전체</a>
-          <span className="count">(10)</span>
+        <li
+          className={search.get("category") == "all" ? "active" : ""}
+          onClick={onMove("all")}
+        >
+          <a>전체</a>
+          <span className="count">({post.length})</span>
         </li>
-        <li>
-          <a href="#">AAA</a>
-          <span className="count">(7)</span>
-        </li>
-        <li>
-          <a href="#">BBB</a>
-          <span className="count">(2)</span>
-        </li>
-        <li>
-          <a href="#">미분류</a>
-          <span className="count">(1)</span>
+        {Object.entries(categoryCounts).map(([category, count]) => (
+          <li
+            className={search.get("category") == category ? "active" : ""}
+            key={category}
+            onClick={onMove(category)}
+          >
+            <a>{category}</a>
+            <span className="count">({count})</span>
+          </li>
+        ))}
+        <li
+          className={search.get("category") == "none" ? "active" : ""}
+          onClick={onMove("none")}
+        >
+          <a>미분류</a>
+          <span className="count">
+            ({post.filter((item) => item.category == "").length})
+          </span>
         </li>
       </ul>
     </div>

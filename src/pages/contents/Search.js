@@ -4,7 +4,6 @@ import { useLocation } from "react-router";
 export default function Search() {
   const location = useLocation();
   let search = new URLSearchParams(location.search);
-  console.log();
   return (
     <h1>
       {search.get("param")
