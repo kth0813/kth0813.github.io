@@ -73,4 +73,11 @@ export const post = [
     subject: "내용10",
     date: "2023-05-17",
   },
+  {
+    seq: 11,
+    category: "CCC",
+    title: "제목11",
+    subject: "내용11",
+    date: "2023-05-18",
+  },
 ];
