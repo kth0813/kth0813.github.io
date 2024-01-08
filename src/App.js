@@ -11,11 +11,13 @@ import List from "./pages/contents/List";
 
 import Search from "./pages/contents/Search";
 import Main from "./pages/main/Main";
+import Card from "./pages/main/Card";
 
 export default function App() {
   return (
     <Router>
       <Routes>
+        <Route exact path="/card" element={<Card />} />
         <Route element={<Layout />}>
           <Route exact path="" element={<Main />} />
           <Route exact path="/main" element={<Main />} />

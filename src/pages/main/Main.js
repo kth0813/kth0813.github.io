@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router";
 
 export default function Main() {
+  const navigate = useNavigate();
+
   return (
     <div
       style={{
@@ -10,7 +13,7 @@ export default function Main() {
         fontSize: "100px",
       }}
     >
-      메인화면
+      메인화면 <button onClick={() => navigate("/card")}>카드</button>
     </div>
   );
 }
