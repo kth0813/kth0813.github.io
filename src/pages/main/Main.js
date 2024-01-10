@@ -14,6 +14,7 @@ export default function Main() {
       }}
     >
       메인화면 <button onClick={() => navigate("/card")}>카드</button>
+      <button onClick={() => navigate("/card2")}>카드2</button>
     </div>
   );
 }

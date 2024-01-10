@@ -12,12 +12,14 @@ import List from "./pages/contents/List";
 import Search from "./pages/contents/Search";
 import Main from "./pages/main/Main";
 import Card from "./pages/main/Card";
+import Card2 from "./pages/main/Card2";
 
 export default function App() {
   return (
     <Router>
       <Routes>
         <Route exact path="/card" element={<Card />} />
+        <Route exact path="/card2" element={<Card2 />} />
         <Route element={<Layout />}>
           <Route exact path="" element={<Main />} />
           <Route exact path="/main" element={<Main />} />
