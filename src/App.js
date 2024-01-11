@@ -14,8 +14,8 @@ export default function App() {
         <Route exact path="/card" element={<Card />} />
         <Route exact path="/card2" element={<Card2 />} />
         <Route element={<Layout />}>
-          <Route exact path="" element={<Main />} />
-          <Route exact path="/main" element={<Main />} />
+          <Route exact path="" element={<Card />} />
+          <Route exact path="/main" element={<Card />} />
           <Route exact path="/:seq" element={<Detail />} />
           <Route exact path="/search" element={<Search />} />
           <Route exact path="/list" element={<List />} />
