@@ -9,7 +9,7 @@ import Card2 from "./pages/main/Card2";
 
 export default function App() {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router>
       <Routes>
         <Route exact path="/card" element={<Card />} />
         <Route exact path="/card2" element={<Card2 />} />
