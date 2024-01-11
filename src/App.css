@@ -85,7 +85,6 @@
 }
 
 .card-back {
-  background-color: #ccc;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -120,7 +119,6 @@
   position: absolute;
   top: 10%;
   right: 30%;
-  background-color: #ccc;
   z-index: 100;
 }
 
