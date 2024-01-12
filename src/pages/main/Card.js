@@ -10,7 +10,8 @@ export default function Card() {
     flipped: false,
   });
   const [showRoulette, setShowRoulette] = useState(false);
-  const [centered, setCentered] = useState(false);
+  const [centered, setCentered] = useState(true);
+  const [start, setStart] = useState(false);
   const allImg = [
     "card01",
     "card02",
@@ -158,83 +159,60 @@ export default function Card() {
 
   const choice = () => setShowRoulette(!showRoulette);
   return (
-    <div>
-      <div className="button-container">
-        <button
-          onClick={choice}
-          style={{
-            width: "100px",
-            height: "100px",
-            borderRadius: "50%",
-            backgroundColor: "#3498db",
-            color: "#ffffff",
-            fontSize: "16px",
-            cursor: "pointer",
-            margin: "10px 50px",
-          }}
-        >
-          {showRoulette ? "카드 뽑기" : "사람 뽑기"}
-        </button>
-        <br />
-        {!showRoulette && (
-          <Fragment>
-            <button
-              onClick={centerCards}
-              style={{
-                width: "100px",
-                height: "100px",
-                borderRadius: "50%",
-                backgroundColor: "#3498db",
-                color: "#ffffff",
-                fontSize: "16px",
-                cursor: "pointer",
-                margin: "10px 50px",
-              }}
-            >
-              카드 섞기
-            </button>
-            <br />
-            <button
-              onClick={openAllCards}
-              style={{
-                width: "100px",
-                height: "100px",
-                borderRadius: "50%",
-                backgroundColor: "#3498db",
-                color: "#ffffff",
-                fontSize: "16px",
-                cursor: "pointer",
-                margin: "10px 50px",
-              }}
-            >
-              모두 보기
-            </button>
-          </Fragment>
-        )}
-      </div>
-      {showRoulette && (
-        <Fragment>
-          <div style={{ fontSize: "20px" }}>다음 지목될 사람 후보</div>
-          <div
-            className="member-list"
-            style={{ overflow: "scroll", border: "2px solid" }}
-          >
-            {allMembers
-              .sort((a, b) => a.use.localeCompare(b.use))
-              .map((member, i) => (
-                <div
-                  key={i}
-                  className={member.use == "Y" ? "used" : ""}
-                  style={{ margin: "5px" }}
-                >
-                  {member.name}
-                </div>
-              ))}
-          </div>
-        </Fragment>
+    <div className="twoFlex" style={{ backgroundColor: "#F7F7F7" }}>
+      {start && (
+        <div className="button-container">
+          <button onClick={choice} className="buttonA">
+            {showRoulette ? "카드 뽑기" : "사람 뽑기"}
+          </button>
+          <br />
+          {!showRoulette && (
+            <Fragment>
+              <button onClick={centerCards} className="buttonA">
+                카드 섞기
+              </button>
+              <br />
+              <button onClick={openAllCards} className="buttonA">
+                모두 보기
+              </button>
+            </Fragment>
+          )}
+          {showRoulette && (
+            <Fragment>
+              <div
+                style={{
+                  fontSize: "20px",
+                  textAlign: "center",
+                }}
+              >
+                다음 지목될 사람 후보
+              </div>
+              <div
+                className="member-list"
+                style={{
+                  overflow: "scroll",
+                  border: "2px solid",
+                  borderRadius: "10px",
+                }}
+              >
+                {allMembers
+                  .sort((a, b) => a.use.localeCompare(b.use))
+                  .map((member, i) => (
+                    <div
+                      key={i}
+                      className={member.use == "Y" ? "used" : ""}
+                      style={{ margin: "5px", textAlign: "center" }}
+                    >
+                      {member.name}
+                    </div>
+                  ))}
+              </div>
+            </Fragment>
+          )}
+        </div>
       )}
       {showRoulette ? (
-        <div style={{ left: "40%", top: "10%", position: "absolute" }}>
+        <div style={{ left: "40%", top: "5vh", position: "absolute" }}>
           <Roulette
             member={allMembers
               .filter((member) => member.use == "N")
@@ -250,11 +228,8 @@ export default function Card() {
               })}
           />
         </div>
-      ) : (
-        <div
-          className={`card-container ${centered ? "centered" : ""}`}
-          style={{ marginLeft: "200px" }}
-        >
+      ) : start ? (
+        <div className={`card-container`}>
           {cards.map((card, index) => (
             <div
               key={card.id}
@@ -273,18 +248,56 @@ export default function Card() {
               <div className="card-inner">
                 <div className="card-front"></div>
                 <div className="card-back">
-                  <div className={"wh " + card.img} />
+                  <div
+                    className={card.img}
+                    style={{
+                      borderRadius: "10px",
+                      width: "100%",
+                      height: 0,
+                      paddingBottom: "145.8%",
+                    }}
+                  />
                 </div>
               </div>
             </div>
           ))}
         </div>
+      ) : (
+        <Fragment>
+          <div
+            style={{
+              zIndex: 100,
+              top: "50%",
+              right: "50%",
+              position: "absolute",
+            }}
+          >
+            <button
+              onClick={() => {
+                setStart(true);
+                centerCards();
+              }}
+              className="buttonB"
+            >
+              시작하기
+            </button>
+          </div>
+          <div className="bg" />
+        </Fragment>
       )}
       {mainCard.flipped && (
         <Fragment>
           <div className="mainCard">
             <div className="card-inner">
-              <div className={"wh " + mainCard.img} />
+              <div
+                className={mainCard.img}
+                style={{
+                  borderRadius: "20px",
+                  width: "100%",
+                  height: 0,
+                  paddingBottom: "145.8%",
+                }}
+              />
             </div>
           </div>
           <div

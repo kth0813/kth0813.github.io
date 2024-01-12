@@ -46,12 +46,42 @@
 }
 
 .card-container {
-  width: calc(100vw - 200px);
-  margin-left: 200px;
+  width: calc(90vw - 100px);
   height: 100vh;
 }
+.button-container {
+  width: calc(10vw + 100px);
+  height: 100vh;
+}
+.buttonA {
+  width: 10vw;
+  height: 3vw;
+  border-radius: 3vw;
+  background: linear-gradient(to bottom right, #7d9fa9, #dbc2c5);
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px 50px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  border: none;
+  font-weight: bold;
+}
+.buttonB {
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  background: linear-gradient(to bottom right, #7d9fa9, #dbc2c5);
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  border: none;
+  font-weight: bold;
+}
 .card {
-  width: calc(25vw - 65px);
+  width: calc(20vw - 100px);
   height: 40vh;
   perspective: 1000px;
   position: absolute;
@@ -60,7 +90,8 @@
 
 .card-inner {
   width: 100%;
-  height: 100%;
+  height: 0;
+  padding-bottom: 141.4%;
   transform-style: preserve-3d;
   transition: transform 0.6s;
 }
@@ -80,8 +111,8 @@
 .card-front {
   background: url("./img/cardback.jpg") center/contain;
   background-repeat: no-repeat;
-
   transform: rotateY(0deg);
+  border-radius: 10px;
 }
 
 .card-back {
@@ -93,8 +124,8 @@
 }
 
 .member-list {
-  width: 200px;
-  height: calc(100vh - 200px);
+  width: calc(10vw + 100px);
+  height: calc(100vh - 150px);
   margin-top: 20px;
 }
 
@@ -440,4 +471,9 @@
 }
 .bsc {
   background-size: cover !important;
+}
+.twoFlex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

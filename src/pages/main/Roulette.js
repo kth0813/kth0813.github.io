@@ -49,16 +49,20 @@ export default function Roulette(props) {
         onClick={handleSpinClick}
         style={{
           zIndex: 1,
-          width: "100px",
-          height: "100px",
-          borderRadius: "50%",
-          backgroundColor: "#3498db",
+          borderRadius: "3vw",
           color: "#ffffff",
-          fontSize: "20px",
+          fontSize: "16px",
           cursor: "pointer",
+          width: "10vw",
+          height: "3vw",
+          background: "linear-gradient(to bottom right, #7d9fa9, #dbc2c5)",
+          boxShadow: "3px 3px 10px rgba(0, 0, 0, 0.5)",
+          border: "none",
+          fontWeight: "bold",
+          marginBottom: "30px",
         }}
       >
-        시작
+        돌리기
       </button>
       <Wheel
         spinDuration={1}
@@ -68,7 +72,7 @@ export default function Roulette(props) {
         data={data}
         onStopSpinning={StopSpinning}
       />
-      {prize && <div style={{ fontSize: "40px" }}>당첨자 : {prize}</div>}
+      {prize && <div style={{ fontSize: "40px" }}>당첨자 : {prize} !!!</div>}
     </div>
   );
 }
