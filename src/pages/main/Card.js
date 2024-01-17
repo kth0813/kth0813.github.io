@@ -81,7 +81,7 @@ export default function Card() {
     { name: "이유나", use: "N" },
     { name: "주예지", use: "N" },
     { name: "김지원", use: "N" },
-    { name: "박도희", use: "N" },
+    { name: "박도희", use: "Y" },
     { name: "백민서", use: "N" },
     { name: "이민수", use: "N" },
     { name: "이연우", use: "N" },
