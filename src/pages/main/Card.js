@@ -87,10 +87,10 @@ export default function Card() {
     { name: "이연우", use: "N" },
     { name: "차영광", use: "N" },
     { name: "김예송", use: "Y" },
-    { name: "이명철", use: "N" },
+    { name: "이명철", use: "Y" },
     { name: "김대원", use: "N" },
     { name: "박병호", use: "N" },
-    { name: "이진호", use: "N" },
+    { name: "이진호", use: "Y" },
     { name: "김준혁", use: "N" },
     { name: "이찬미", use: "N" },
     { name: "김철 목사님", use: "N" },
@@ -157,6 +157,16 @@ export default function Card() {
     );
   };
 
+  const number = (num) => {
+    if (num == 1) return "4";
+    if (num == 2) return "8";
+    if (num == 3) return "3";
+    if (num == 4) return "7";
+    if (num == 5) return "2";
+    if (num == 6) return "6";
+    if (num == 7) return "1";
+    if (num == 8) return "5";
+  };
   const choice = () => setShowRoulette(!showRoulette);
   return (
     <div className="twoFlex" style={{ backgroundColor: "#F7F7F7" }}>
@@ -246,7 +256,22 @@ export default function Card() {
               }}
             >
               <div className="card-inner">
-                <div className="card-front"></div>
+                <div className="card-front">
+                  <p
+                    style={{
+                      fontSize: "15px",
+                      backgroundColor: "dimgray",
+                      color: "white",
+                      width: "20px",
+                      height: "20px",
+                      margin: 0,
+                      textAlign: "center",
+                      borderRadius: "10px",
+                    }}
+                  >
+                    {number(index + 1)}
+                  </p>
+                </div>
                 <div className="card-back">
                   <div
                     className={card.img}
