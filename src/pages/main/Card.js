@@ -72,30 +72,35 @@ export default function Card() {
     { name: "김대원", use: "N" },
     { name: "김예림", use: "N" },
     { name: "김예송", use: "Y" },
+    { name: "김여명", use: "N" },
     { name: "김용빈", use: "N" },
+    { name: "김주원", use: "N" },
     { name: "김지원", use: "N" },
     { name: "김지주", use: "N" },
     { name: "김진명", use: "N" },
+    { name: "김태훈", use: "N" },
     { name: "박도희", use: "Y" },
     { name: "박병호", use: "N" },
     { name: "박윤걸", use: "N" },
     { name: "백민서", use: "N" },
     { name: "백민우", use: "N" },
-    { name: "정민성", use: "N" },
-    { name: "정회창", use: "N" },
-    { name: "김여명", use: "N" },
-    { name: "김태훈", use: "N" },
+    { name: "백하영", use: "N" },
+    { name: "신지원", use: "N" },
+    { name: "유연호", use: "N" },
     { name: "이나래", use: "N" },
     { name: "이명철", use: "Y" },
     { name: "이민수", use: "N" },
     { name: "이연우", use: "N" },
     { name: "이유나", use: "N" },
     { name: "이진호", use: "Y" },
-    { name: "이하빈", use: "N" },
+    { name: "이찬미", use: "N" },
+    { name: "이하빈", use: "Y" },
     { name: "장진영", use: "N" },
+    { name: "정회창", use: "N" },
     { name: "전솔담", use: "N" },
-    { name: "주예지", use: "N" },
+    { name: "주예지", use: "Y" },
     { name: "차영광", use: "N" },
+    { name: "한예지", use: "N" },
     { name: "김철 목사님", use: "N" },
     { name: "박순성 집사님", use: "N" },
   ];
@@ -228,14 +233,14 @@ export default function Card() {
         <div style={{ left: "40%", top: "5vh", position: "absolute" }}>
           <Roulette
             member={allMembers
-              .filter((member) => member.use == "N")
+              .filter((member) => member.use != "Y")
               .map((member) => {
                 return {
                   ...member,
                   option: member.name,
                   percentage: Math.ceil(
                     100 /
-                      allMembers.filter((member) => member.use == "N").length
+                      allMembers.filter((member) => member.use != "Y").length
                   ),
                 };
               })}

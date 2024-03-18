@@ -7,9 +7,9 @@ export default function Roulette(props) {
 
   const [mustSpin, setMustSpin] = useState(false); //룰렛이 회전 애니메이션을 시작
   const [prizeNumber, setPrizeNumber] = useState(0); //당첨 인덱스
-  const [prize, setPrize] = useState("");
+  const [prize, setPrize] = useState({});
   const handleSpinClick = () => {
-    setPrize("");
+    setPrize({});
     if (!mustSpin) {
       // 1. 랜덤 기준점 설정
       const pivot = Math.floor(Math.random() * 99 + 1);
@@ -40,7 +40,7 @@ export default function Roulette(props) {
 
   const StopSpinning = () => {
     setMustSpin(false);
-    setPrize(data[prizeNumber].option);
+    setPrize(data[prizeNumber]);
   };
 
   return (
@@ -64,6 +64,7 @@ export default function Roulette(props) {
       >
         돌리기
       </button>
+      <div style={{ fontSize: "25px" }}>남은사람 : {data.length}명</div>
       <Wheel
         spinDuration={1}
         startingOptionIndex={Math.floor(Math.random() * data.length)}
@@ -71,8 +72,38 @@ export default function Roulette(props) {
         prizeNumber={prizeNumber}
         data={data}
         onStopSpinning={StopSpinning}
+        textColors={["#3E3E3E"]}
+        backgroundColors={[
+          "#FFD8D8",
+          "#FAE0D4",
+          "#FAF4C0",
+          "#CEFBC9",
+          "#D9E5FF",
+          "#E8D9FF",
+          "#FFD9EC",
+        ]}
+        outerBorderColor="gray"
+        outerBorderWidth="1"
+        radiusLineColor="gray"
+        radiusLineWidth="1"
+        textDistance="70"
       />
-      {prize && <div style={{ fontSize: "40px" }}>당첨자 : {prize} !!!</div>}
+      {prize.option &&
+        (prize.option != "정회창" ? (
+          <div>
+            <div style={{ fontSize: "40px" }}>당첨자 : {prize.option} !!!</div>
+            <div style={{ fontSize: "25px" }}>
+              금요일까지 예지총무님에게 <br />
+              답변을 보내주세요 !
+            </div>
+          </div>
+        ) : (
+          <div style={{ fontSize: "30px" }}>
+            아쉽지만 회창이는
+            <br /> 휴대폰을 쓸 수 없어요ㅜㅜ <br />
+            재도전 !
+          </div>
+        ))}
     </div>
   );
 }
