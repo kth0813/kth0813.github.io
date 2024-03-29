@@ -82,7 +82,7 @@ export default function Card() {
     { name: "박도희", use: "Y" },
     { name: "박병호", use: "N" },
     { name: "박윤걸", use: "N" },
-    { name: "백민서", use: "N" },
+    { name: "백민서", use: "Y" },
     { name: "백민우", use: "N" },
     { name: "백하영", use: "N" },
     { name: "신지원", use: "N" },
@@ -267,14 +267,15 @@ export default function Card() {
                 <div className="card-front">
                   <p
                     style={{
-                      fontSize: "15px",
+                      fontSize: "21px",
                       backgroundColor: "dimgray",
                       color: "white",
-                      width: "20px",
-                      height: "20px",
+                      width: "30px",
+                      height: "30px",
                       margin: 0,
                       textAlign: "center",
-                      borderRadius: "10px",
+                      borderRadius: "15px",
+                      fontWeight: "bold",
                     }}
                   >
                     {number(index + 1)}

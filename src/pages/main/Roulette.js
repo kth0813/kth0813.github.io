@@ -1,5 +1,5 @@
 import { Wheel } from "react-custom-roulette";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 
 export default function Roulette(props) {
   //데이터
@@ -88,22 +88,15 @@ export default function Roulette(props) {
         radiusLineWidth="1"
         textDistance="70"
       />
-      {prize.option &&
-        (prize.option != "정회창" ? (
-          <div>
-            <div style={{ fontSize: "40px" }}>당첨자 : {prize.option} !!!</div>
-            <div style={{ fontSize: "25px" }}>
-              금요일까지 예지총무님에게 <br />
-              답변을 보내주세요 !
-            </div>
+      {prize.option && (
+        <Fragment>
+          <div style={{ fontSize: "40px" }}>당첨자 : {prize.option} !!!</div>
+          <div style={{ fontSize: "25px" }}>
+            금요일까지 예지총무님에게 <br />
+            답변을 보내주세요 !
           </div>
-        ) : (
-          <div style={{ fontSize: "30px" }}>
-            아쉽지만 회창이는
-            <br /> 휴대폰을 쓸 수 없어요ㅜㅜ <br />
-            재도전 !
-          </div>
-        ))}
+        </Fragment>
+      )}
     </div>
   );
 }
