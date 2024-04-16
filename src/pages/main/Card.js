@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Fragment } from "react";
 import "../../App.css";
 import Roulette from "./Roulette";
+import Roulette2 from "./Roulette2";
 
 export default function Card() {
   const [cards, setCards] = useState([]);
@@ -10,6 +11,7 @@ export default function Card() {
     flipped: false,
   });
   const [showRoulette, setShowRoulette] = useState(false);
+  const [showRoulette2, setShowRoulette2] = useState(false);
   const [centered, setCentered] = useState(true);
   const [start, setStart] = useState(false);
   const allImg = [
@@ -74,7 +76,7 @@ export default function Card() {
     { name: "김예송", use: "Y" },
     { name: "김여명", use: "N" },
     { name: "김용빈", use: "N" },
-    { name: "김주원", use: "N" },
+    { name: "김주원", use: "Y" },
     { name: "김지원", use: "N" },
     { name: "김지주", use: "N" },
     { name: "김진명", use: "N" },
@@ -176,15 +178,18 @@ export default function Card() {
     if (num == 8) return "5";
   };
   const choice = () => setShowRoulette(!showRoulette);
+
   return (
     <div className="twoFlex" style={{ backgroundColor: "#F7F7F7" }}>
       {start && (
         <div className="button-container">
-          <button onClick={choice} className="buttonA">
-            {showRoulette ? "카드 뽑기" : "사람 뽑기"}
-          </button>
+          {!showRoulette2 && (
+            <button onClick={choice} className="buttonA">
+              {showRoulette ? "카드 뽑기" : "사람 뽑기"}
+            </button>
+          )}
           <br />
-          {!showRoulette && (
+          {!showRoulette2 && !showRoulette && (
             <Fragment>
               <button onClick={centerCards} className="buttonA">
                 카드 섞기
@@ -195,6 +200,15 @@ export default function Card() {
               </button>
             </Fragment>
           )}
+          <button
+            onClick={() => {
+              setShowRoulette(false);
+              setShowRoulette2(!showRoulette2);
+            }}
+            className="buttonA"
+          >
+            {showRoulette2 ? "돌아가기" : "랜덤게임"}
+          </button>
           {showRoulette && (
             <Fragment>
               <div
@@ -229,7 +243,11 @@ export default function Card() {
           )}
         </div>
       )}
-      {showRoulette ? (
+      {showRoulette2 ? (
+        <div style={{ left: "40%", top: "5vh", position: "absolute" }}>
+          <Roulette2 />
+        </div>
+      ) : showRoulette ? (
         <div style={{ left: "40%", top: "5vh", position: "absolute" }}>
           <Roulette
             member={allMembers
