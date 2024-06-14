@@ -98,7 +98,7 @@ export default function Card() {
     { name: "이진호", use: "Y" },
     { name: "이찬미", use: "N" },
     { name: "이하빈", use: "Y" },
-    { name: "장진영", use: "N" },
+    { name: "장진영", use: "Y" },
     { name: "정회창", use: "N" },
     { name: "전솔담", use: "N" },
     { name: "주예지", use: "Y" },
