@@ -6,6 +6,7 @@ import Search from "./pages/contents/Search";
 import Main from "./pages/main/Main";
 import Card from "./pages/main/Card";
 import Card2 from "./pages/main/Card2";
+import Map from "./pages/main/Map";
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
           <Route exact path="/:seq" element={<Detail />} />
           <Route exact path="/search" element={<Search />} />
           <Route exact path="/list" element={<List />} />
+          <Route exact path="/map" element={<Map />} />
         </Route>
       </Routes>
     </Router>

@@ -477,3 +477,12 @@
   justify-content: space-between;
   align-items: center;
 }
+.map-container {
+  width: 70vw;
+  height: 46.2vw;
+  border: 1px solid black;
+  position: relative;
+  background-image: url("./img/map01.jpg"); /* public 폴더에 있는 이미지를 사용 */
+  background-size: cover; /* 배경 이미지 크기를 맵 크기에 맞춤 */
+  background-position: center; /* 배경 이미지 위치를 중앙으로 설정 */
+}

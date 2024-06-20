@@ -2,6 +2,7 @@ import React, { useState, useEffect, Fragment } from "react";
 import "../../App.css";
 import Roulette from "./Roulette";
 import Roulette2 from "./Roulette2";
+import Map from "./Map";
 
 export default function Card() {
   const [cards, setCards] = useState([]);
@@ -12,6 +13,7 @@ export default function Card() {
   });
   const [showRoulette, setShowRoulette] = useState(false);
   const [showRoulette2, setShowRoulette2] = useState(false);
+  const [showMap, setShowMap] = useState(false);
   const [centered, setCentered] = useState(true);
   const [start, setStart] = useState(false);
   const allImg = [
@@ -87,7 +89,7 @@ export default function Card() {
     { name: "백민서", use: "Y" },
     { name: "백민우", use: "N" },
     { name: "백하영", use: "N" },
-    { name: "서봉규", use: "N" },
+    { name: "서봉규", use: "Y" },
     { name: "신지원", use: "N" },
     { name: "유연호", use: "N" },
     { name: "이나래", use: "Y" },
@@ -185,13 +187,13 @@ export default function Card() {
     <div className="twoFlex" style={{ backgroundColor: "#F7F7F7" }}>
       {start && (
         <div className="button-container">
-          {!showRoulette2 && (
+          {!showRoulette2 && !showMap && (
             <button onClick={choice} className="buttonA">
               {showRoulette ? "카드 뽑기" : "사람 뽑기"}
             </button>
           )}
           <br />
-          {!showRoulette2 && !showRoulette && (
+          {!showRoulette2 && !showMap && !showRoulette && (
             <Fragment>
               <button onClick={centerCards} className="buttonA">
                 카드 섞기
@@ -206,10 +208,21 @@ export default function Card() {
             onClick={() => {
               setShowRoulette(false);
               setShowRoulette2(!showRoulette2);
+              setShowMap(false);
             }}
             className="buttonA"
           >
-            {showRoulette2 ? "돌아가기" : "랜덤게임"}
+            {showRoulette2 ? "돌아가기" : "조편성"}
+          </button>
+          <button
+            onClick={() => {
+              setShowRoulette(false);
+              setShowRoulette2(false);
+              setShowMap(!showMap);
+            }}
+            className="buttonA"
+          >
+            {showMap ? "돌아가기" : "게임"}
           </button>
           {showRoulette && (
             <Fragment>
@@ -265,6 +278,10 @@ export default function Card() {
                 };
               })}
           />
+        </div>
+      ) : showMap ? (
+        <div style={{ left: "20%", top: "5vh", position: "absolute" }}>
+          <Map />
         </div>
       ) : start ? (
         <div className={`card-container`}>
