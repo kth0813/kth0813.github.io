@@ -486,3 +486,9 @@
   background-size: cover; /* 배경 이미지 크기를 맵 크기에 맞춤 */
   background-position: center; /* 배경 이미지 위치를 중앙으로 설정 */
 }
+.gameInput {
+  width: 15px;
+  border-radius: 7px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
