@@ -1,7 +1,14 @@
 import React from "react";
 
-export default function Piece({ id, x, y, color, onMouseDown }) {
-  return (
+export default function Piece({ id, x, y, color, onMouseDown, input }) {
+  return input ? (
+    <input
+      onMouseDown={() => onMouseDown(id)}
+      className="gameInput"
+      type="text"
+      style={{ left: `${x}px`, top: `${y}px` }}
+    />
+  ) : (
     <div
       onMouseDown={() => onMouseDown(id)}
       style={{

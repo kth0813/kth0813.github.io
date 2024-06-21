@@ -4,10 +4,28 @@ import "../../App.css"; // CSS 파일을 추가하여 스타일을 분리
 
 export default function Map() {
   const [pieces, setPieces] = useState([
-    { id: 1, x: 950, y: 600, color: "red" },
-    { id: 2, x: 900, y: 600, color: "blue" },
-    { id: 3, x: 850, y: 600, color: "green" },
-    { id: 4, x: 800, y: 600, color: "#FFA900" },
+    { id: 1, x: 950, y: 600, color: "red", input: false },
+    { id: 2, x: 900, y: 600, color: "blue", input: false },
+    { id: 3, x: 850, y: 600, color: "green", input: false },
+    { id: 4, x: 800, y: 600, color: "#FFA900", input: false },
+    { id: 5, x: 20, y: 20, color: "white", input: true },
+    { id: 6, x: 40, y: 20, color: "white", input: true },
+    { id: 7, x: 60, y: 20, color: "white", input: true },
+    { id: 8, x: 80, y: 20, color: "white", input: true },
+    { id: 9, x: 100, y: 20, color: "white", input: true },
+    { id: 10, x: 120, y: 20, color: "white", input: true },
+    { id: 11, x: 20, y: 40, color: "white", input: true },
+    { id: 12, x: 40, y: 40, color: "white", input: true },
+    { id: 13, x: 60, y: 40, color: "white", input: true },
+    { id: 14, x: 80, y: 40, color: "white", input: true },
+    { id: 15, x: 100, y: 40, color: "white", input: true },
+    { id: 16, x: 120, y: 40, color: "white", input: true },
+    { id: 17, x: 20, y: 60, color: "white", input: true },
+    { id: 18, x: 40, y: 60, color: "white", input: true },
+    { id: 19, x: 60, y: 60, color: "white", input: true },
+    { id: 20, x: 80, y: 60, color: "white", input: true },
+    { id: 21, x: 100, y: 60, color: "white", input: true },
+    { id: 22, x: 120, y: 60, color: "white", input: true },
   ]);
   const [draggingPiece, setDraggingPiece] = useState(null);
   const mapRef = useRef(null);
@@ -46,95 +64,6 @@ export default function Map() {
 
   return (
     <div ref={mapRef} className="map-container">
-      {/* 턴수 */}
-      <input
-        className="gameInput"
-        type="text"
-        style={{ left: "580px", top: "39px" }}
-      />
-      <input
-        className="gameInput"
-        type="text"
-        style={{ left: "545px", top: "39px" }}
-      />
-      {/* 초록팀 */}
-      <input
-        className="gameInput"
-        type="text"
-        style={{ left: "175px", top: "50px" }}
-      />
-      <input
-        className="gameInput"
-        type="text"
-        style={{ left: "250px", top: "50px" }}
-      />
-      <input
-        className="gameInput"
-        type="text"
-        style={{ left: "325px", top: "50px" }}
-      />
-      <input
-        className="gameInput"
-        type="text"
-        style={{ left: "96px", top: "90px" }}
-      />
-      <input
-        className="gameInput"
-        type="text"
-        style={{ left: "130px", top: "90px" }}
-      />
-      {/* 빨강팀 */}
-      <input
-        className="gameInput"
-        type="text"
-        style={{ left: "175px", top: "645px" }}
-      />
-      <input
-        className="gameInput"
-        type="text"
-        style={{ left: "250px", top: "645px" }}
-      />
-      <input
-        className="gameInput"
-        type="text"
-        style={{ left: "325px", top: "645px" }}
-      />
-      <input
-        className="gameInput"
-        type="text"
-        style={{ left: "103px", top: "670px" }}
-      />
-      <input
-        className="gameInput"
-        type="text"
-        style={{ left: "141px", top: "670px" }}
-      />
-      {/* 파랑팀 */}
-      <input
-        className="gameInput"
-        type="text"
-        style={{ left: "665px", top: "645px" }}
-      />
-      <input
-        className="gameInput"
-        type="text"
-        style={{ left: "735px", top: "645px" }}
-      />
-      <input
-        className="gameInput"
-        type="text"
-        style={{ left: "815px", top: "645px" }}
-      />
-      <input
-        className="gameInput"
-        type="text"
-        style={{ left: "603px", top: "670px" }}
-      />
-      <input
-        className="gameInput"
-        type="text"
-        style={{ left: "643px", top: "670px" }}
-      />
       {pieces.map((piece) => (
         <Piece
           key={piece.id}
@@ -143,6 +72,7 @@ export default function Map() {
           y={piece.y}
           color={piece.color}
           onMouseDown={handleMouseDown}
+          input={piece.input}
         />
       ))}
     </div>
