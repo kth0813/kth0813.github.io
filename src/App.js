@@ -7,8 +7,22 @@ import Main from "./pages/main/Main";
 import Card from "./pages/main/Card";
 import Card2 from "./pages/main/Card2";
 import Map from "./pages/main/Map";
+import { useEffect } from "react";
 
 export default function App() {
+  const preventClose = (e) => {
+    e.preventDefault();
+    e.returnValue = "";
+  };
+  useEffect(() => {
+    (() => {
+      window.addEventListener("beforeunload", preventClose);
+    })();
+    return () => {
+      window.removeEventListener("beforeunload", preventClose);
+    };
+  }, []);
+
   return (
     <Router>
       <Routes>
