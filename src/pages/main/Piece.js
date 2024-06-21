@@ -1,6 +1,6 @@
 import React from "react";
 
-const Piece = ({ id, x, y, color, onMouseDown }) => {
+export default function Piece({ id, x, y, color, onMouseDown }) {
   return (
     <div
       onMouseDown={() => onMouseDown(id)}
@@ -16,6 +16,4 @@ const Piece = ({ id, x, y, color, onMouseDown }) => {
       }}
     ></div>
   );
-};
-
-export default Piece;
+}
