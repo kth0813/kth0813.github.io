@@ -74,7 +74,7 @@ export default function Card() {
   const allMembers = [
     { name: "권유담", use: "N" },
     { name: "김광은", use: "N" },
-    { name: "김다인", use: "N" },
+    { name: "김다인", use: "Y" },
     { name: "김대원", use: "N" },
     { name: "김예림", use: "N" },
     { name: "김예송", use: "Y" },
