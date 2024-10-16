@@ -89,7 +89,7 @@ export default function Card() {
     { name: "박병호", use: "Y" },
     { name: "박윤걸", use: "N" },
     { name: "백민서", use: "Y" },
-    { name: "백민우", use: "N" },
+    { name: "백민우", use: "Y" },
     { name: "백하영", use: "N" },
     { name: "서봉규", use: "Y" },
     { name: "신지원", use: "N" },
@@ -110,7 +110,7 @@ export default function Card() {
     { name: "주예지", use: "Y" },
     { name: "차영광", use: "Y" },
     { name: "최혜원", use: "N" },
-    { name: "한예지", use: "N" },
+    { name: "한예지", use: "Y" },
     { name: "김철 목사님", use: "N" },
     { name: "박순성 집사님", use: "N" },
   ];
