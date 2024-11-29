@@ -87,7 +87,7 @@ export default function Card() {
     { name: "김태훈", use: "Y" },
     { name: "박도희", use: "Y" },
     { name: "박병호", use: "Y" },
-    { name: "박윤걸", use: "N" },
+    { name: "박윤걸", use: "Y" },
     { name: "백민서", use: "Y" },
     { name: "백민우", use: "Y" },
     { name: "백하영", use: "Y" },
@@ -113,7 +113,6 @@ export default function Card() {
     { name: "최소민", use: "N" },
     { name: "최혜원", use: "Y" },
     { name: "한예지", use: "Y" },
-    { name: "김철 목사님", use: "Y" },
     { name: "박순성 집사님", use: "N" },
   ];
   useEffect(() => shuffleCard(), []);
