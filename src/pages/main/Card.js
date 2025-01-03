@@ -76,7 +76,7 @@ export default function Card() {
     { name: "김광은", use: "N" },
     { name: "김다인", use: "Y" },
     { name: "김민지", use: "N" },
-    { name: "김대원", use: "N" },
+    { name: "김대원", use: "Y" },
     { name: "김예림", use: "Y" },
     { name: "김예송", use: "Y" },
     { name: "김여명", use: "Y" },
