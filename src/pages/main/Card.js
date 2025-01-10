@@ -88,6 +88,7 @@ export default function Card() {
     { name: "김태훈", use: "Y" },
     { name: "박도희", use: "Y" },
     { name: "박병호", use: "Y" },
+    { name: "박예빈", use: "N" },
     { name: "박윤걸", use: "Y" },
     { name: "백민서", use: "Y" },
     { name: "백민우", use: "Y" },
@@ -100,6 +101,7 @@ export default function Card() {
     { name: "이나래", use: "Y" },
     { name: "이명철", use: "Y" },
     { name: "이민수", use: "Y" },
+    { name: "이신우", use: "N" },
     { name: "이연우", use: "Y" },
     { name: "이유나", use: "N" },
     { name: "이지우", use: "Y" },
@@ -114,7 +116,8 @@ export default function Card() {
     { name: "최소민", use: "N" },
     { name: "최혜원", use: "Y" },
     { name: "한예지", use: "Y" },
-    { name: "박순성 집사님", use: "N" },
+    { name: "김주훈 강도사님", use: "N" },
+    { name: "박순성 집사님", use: "Y" },
   ];
   useEffect(() => shuffleCard(), []);
   const shuffleCard = () => {
