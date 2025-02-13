@@ -22,7 +22,7 @@ export default function Card() {
   ];
 
   const allMembers = [
-    { name: "권유담", use: "N" },
+    { name: "권유담", use: "Y" },
     { name: "김광은", use: "N" },
     { name: "김다인", use: "Y" },
     { name: "김민지", use: "Y" },
@@ -47,7 +47,7 @@ export default function Card() {
     { name: "신지원", use: "Y" },
     { name: "오송현", use: "Y" },
     { name: "유연호", use: "Y" },
-    { name: "유리", use: "N" },
+    { name: "유리", use: "Y" },
     { name: "이나래", use: "Y" },
     { name: "이명철", use: "Y" },
     { name: "이민수", use: "Y" },
@@ -63,7 +63,7 @@ export default function Card() {
     { name: "전솔담", use: "Y" },
     { name: "주예지", use: "Y" },
     { name: "차영광", use: "Y" },
-    { name: "최소민", use: "N" },
+    { name: "최소민", use: "Y" },
     { name: "최혜원", use: "Y" },
     { name: "한예지", use: "Y" },
     { name: "김주훈 강도사님", use: "Y" },
