@@ -19,7 +19,7 @@ export default function Roulette() {
     { name: "김태훈", useYn: "Y" },
     { name: "박도희", useYn: "Y" },
     { name: "박병호", useYn: "Y" },
-    { name: "박예빈", useYn: "N" },
+    { name: "박예빈", useYn: "Y" },
     { name: "박윤걸", useYn: "Y" },
     { name: "백민서", useYn: "Y" },
     { name: "백민우", useYn: "Y" },
@@ -96,7 +96,7 @@ export default function Roulette() {
   };
 
   return (
-    <div className="App">
+    <div className="App" style={{ paddingTop: "20px" }}>
       <button className="buttonA" onClick={handleSpinClick}>
         돌리기
       </button>

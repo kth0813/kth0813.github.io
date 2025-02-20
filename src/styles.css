@@ -382,7 +382,6 @@ body {
 
 .layout {
   display: flex;
-  height: 100vh;
 }
 
 .left-sidebar {
@@ -409,4 +408,13 @@ body {
 }
 .ac {
   text-align: center;
+}
+table {
+  width: 800px;
+  border-collapse: collapse;
+}
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 12px 4px;
 }

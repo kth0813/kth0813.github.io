@@ -1,5 +1,4 @@
 import Left from "./Left";
-import "../styles.css";
 
 export default function Layout({ children }) {
   return (

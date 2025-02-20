@@ -71,7 +71,7 @@ export default function Card() {
   const number = (num) => ["4", "8", "3", "7", "2", "6", "1", "5"][num - 1];
 
   return (
-    <div style={{ width: "calc(100vw - 220px)", display: "flex", justifyContent: "center" }}>
+    <div style={{ width: "calc(100vw - 220px)", display: "flex", justifyContent: "center", paddingTop: "20px" }}>
       <div style={{ display: "flex" }}>
         <button onClick={centerCards} className="buttonA">
           카드 섞기
@@ -88,7 +88,7 @@ export default function Card() {
           className={`card${card.flipped ? " flipped" : ""}`}
           onClick={() => ClickCard(card.id)}
           style={{
-            top: centered ? "calc(40% + 50px)" : `calc(${(index % 2) * 50}% + 100px)`,
+            top: centered ? "calc(40% + 50px)" : `calc(${(index % 2) * 50}% + 120px)`,
             right: centered ? "calc(20% + 50px)" : `calc(${Math.floor(index / 2) * 20}% + 50px)`,
             transform: centered ? "translate(-50%, -50%)" : "none"
           }}

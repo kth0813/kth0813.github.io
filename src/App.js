@@ -3,6 +3,7 @@ import Main from "./pages/Main";
 import Card from "./pages/Card";
 import Layout from "./pages/Layout";
 import Roulette from "./pages/Roulette";
+import "./styles.css";
 
 export default function App() {
   return (
