@@ -6,7 +6,7 @@ import Roulette from "./pages/Roulette";
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/kth0813.github.io">
       <Layout>
         <Routes>
           <Route path="/main" element={<Main />} />
