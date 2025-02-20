@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Main from "./pages/Main";
 import Card from "./pages/Card";
 import Layout from "./pages/Layout";
@@ -6,7 +6,7 @@ import Roulette from "./pages/Roulette";
 
 export default function App() {
   return (
-    <Router basename="/kth0813.github.io">
+    <Router>
       <Layout>
         <Routes>
           <Route path="/main" element={<Main />} />
