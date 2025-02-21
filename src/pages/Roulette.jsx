@@ -101,7 +101,15 @@ export default function Roulette() {
         돌리기
       </button>
       <div style={{ fontSize: "25px" }}>남은사람 : {data.length}명</div>
-      <div style={{ display: "flex", justifyContent: "center" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          transform: "scale(1.2)",
+          transformOrigin: "center",
+          marginTop: "60px"
+        }}
+      >
         <Wheel
           spinDuration={1}
           startingOptionIndex={Math.floor(Math.random() * data.length)}
@@ -116,11 +124,12 @@ export default function Roulette() {
           radiusLineColor="gray"
           radiusLineWidth="1"
           textDistance="70"
+          responsive
         />
       </div>
       {prize.option && (
         <Fragment>
-          <div style={{ fontSize: "40px" }}>당첨자 : {prize.option} !!!</div>
+          <div style={{ fontSize: "40px", marginTop: "60px" }}>당첨자 : {prize.option} !!!</div>
           <div style={{ fontSize: "25px" }}>
             금요일까지 윤걸총무님에게 <br /> 답변을 보내주세요 !
           </div>
