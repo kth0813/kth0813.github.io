@@ -105,27 +105,27 @@ export default function Roulette() {
         style={{
           display: "flex",
           justifyContent: "center",
-          transform: "scale(1.2)",
-          transformOrigin: "center",
           marginTop: "60px"
         }}
       >
-        <Wheel
-          spinDuration={1}
-          startingOptionIndex={Math.floor(Math.random() * data.length)}
-          mustStartSpinning={mustSpin}
-          prizeNumber={prizeNumber}
-          data={data}
-          onStopSpinning={StopSpinning}
-          textColors={["#3E3E3E"]}
-          backgroundColors={["#FFD8D8", "#FAE0D4", "#FAF4C0", "#CEFBC9", "#D9E5FF", "#E8D9FF", "#FFD9EC"]}
-          outerBorderColor="gray"
-          outerBorderWidth="1"
-          radiusLineColor="gray"
-          radiusLineWidth="1"
-          textDistance="70"
-          responsive
-        />
+        <div style={{ transform: "scale(1.2)" }}>
+          <Wheel
+            spinDuration={1}
+            startingOptionIndex={Math.floor(Math.random() * data.length)}
+            mustStartSpinning={mustSpin}
+            prizeNumber={prizeNumber}
+            data={data}
+            onStopSpinning={StopSpinning}
+            textColors={["#3E3E3E"]}
+            backgroundColors={["#FFD8D8", "#FAE0D4", "#FAF4C0", "#CEFBC9", "#D9E5FF", "#E8D9FF", "#FFD9EC"]}
+            outerBorderColor="gray"
+            outerBorderWidth="1"
+            radiusLineColor="gray"
+            radiusLineWidth="1"
+            textDistance="70"
+            responsive
+          />
+        </div>
       </div>
       {prize.option && (
         <Fragment>
