@@ -5,6 +5,9 @@ export default function Roulette() {
   const list = [
     { name: "권유담", useYn: "Y" },
     { name: "김광은", useYn: "N" },
+    { name: "김광은", useYn: "N" },
+    { name: "김광은", useYn: "N" },
+    { name: "김광은", useYn: "N" },
     { name: "김다인", useYn: "Y" },
     { name: "김민지", useYn: "Y" },
     { name: "김대원", useYn: "Y" },
@@ -32,7 +35,7 @@ export default function Roulette() {
     { name: "이나래", useYn: "Y" },
     { name: "이명철", useYn: "Y" },
     { name: "이민수", useYn: "Y" },
-    { name: "이신우", useYn: "N" },
+    { name: "이신우", useYn: "Y" },
     { name: "이연우", useYn: "Y" },
     { name: "이유나", useYn: "Y" },
     { name: "이지우", useYn: "Y" },
