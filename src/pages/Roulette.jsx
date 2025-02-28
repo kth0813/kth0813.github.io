@@ -5,9 +5,9 @@ export default function Roulette() {
   const list = [
     { name: "권유담", useYn: "Y" },
     { name: "김광은", useYn: "N" },
-    { name: "김광은", useYn: "N" },
-    { name: "김광은", useYn: "N" },
-    { name: "김광은", useYn: "N" },
+    { name: "金光恩(광은)", useYn: "N" },
+    { name: "kim K E(광은)", useYn: "N" },
+    { name: "김칸트(광은)", useYn: "N" },
     { name: "김다인", useYn: "Y" },
     { name: "김민지", useYn: "Y" },
     { name: "김대원", useYn: "Y" },
@@ -55,11 +55,7 @@ export default function Roulette() {
   ];
   const filteredList = list.filter((member) => member.useYn != "Y");
   const data = filteredList.map((member) => {
-    return {
-      ...member,
-      option: member.name,
-      percentage: Math.ceil(100 / filteredList.length)
-    };
+    return { ...member, option: member.name, percentage: Math.ceil(100 / filteredList.length) };
   });
   const [mustSpin, setMustSpin] = useState(false); //룰렛이 회전 애니메이션을 시작
   const [prizeNumber, setPrizeNumber] = useState(0); //당첨 인덱스
@@ -67,25 +63,17 @@ export default function Roulette() {
   const handleSpinClick = () => {
     setPrize({});
     if (!mustSpin) {
-      // 1. 랜덤 기준점 설정
-      const pivot = Math.floor(Math.random() * 99 + 1);
+      const pivot = Math.floor(Math.random() * 99 + 1); // 랜덤 기준점 설정
       let stack = 0; // 가중치
-
-      let percentage = data.map((row) => {
-        {
-          return row.percentage;
-        }
-      });
-
+      let percentage = data.map((row) => row.percentage);
       let newPrizeNumber = null; //당첨 인덱스
 
       percentage.some((row, idx) => {
-        stack += row; //2. 가중치 누적
+        stack += row; // 가중치 누적
 
-        // 3. 누적 가중치 값이 기준점 이상이면 종료
         if (pivot <= stack) {
           newPrizeNumber = idx;
-          return true;
+          return true; // 누적 가중치 값이 기준점 이상이면 종료
         }
       });
       setPrizeNumber(newPrizeNumber);
@@ -104,13 +92,7 @@ export default function Roulette() {
         돌리기
       </button>
       <div style={{ fontSize: "25px" }}>남은사람 : {data.length}명</div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          marginTop: "60px"
-        }}
-      >
+      <div style={{ display: "flex", justifyContent: "center", marginTop: "60px" }}>
         <div style={{ transform: "scale(1.2)" }}>
           <Wheel
             spinDuration={1}

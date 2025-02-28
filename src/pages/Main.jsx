@@ -23,14 +23,7 @@ export default function Main() {
       >
         <h2 style={{ paddingTop: "30px" }}>학익장로교회는...</h2>
         <div>
-          <table
-            style={{
-              margin: "auto",
-              marginTop: "20px",
-              borderCollapse: "separate",
-              borderSpacing: "5px"
-            }}
-          >
+          <table style={{ margin: "auto", marginTop: "20px", borderCollapse: "separate", borderSpacing: "5px" }}>
             <thead>
               <tr style={{ backgroundColor: "#ccc" }}>
                 <th colSpan="2" style={{ border: "none", borderRadius: "20px" }}>
