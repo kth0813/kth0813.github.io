@@ -6,7 +6,6 @@ export default function Roulette() {
     { name: "권유담", useYn: "Y" },
     { name: "김광은", useYn: "Y" },
     { name: "김다인", useYn: "Y" },
-    { name: "김민지", useYn: "Y" },
     { name: "김대원", useYn: "Y" },
     { name: "김예림", useYn: "Y" },
     { name: "김예송", useYn: "Y" },
@@ -34,9 +33,7 @@ export default function Roulette() {
     { name: "안예현", useYn: "N" },
     { name: "안예현", useYn: "N" },
     { name: "오송현", useYn: "Y" },
-    { name: "유연호", useYn: "Y" },
     { name: "유리", useYn: "Y" },
-    { name: "이나래", useYn: "Y" },
     { name: "이명철", useYn: "Y" },
     { name: "이민수", useYn: "Y" },
     { name: "이신우", useYn: "Y" },
@@ -54,8 +51,8 @@ export default function Roulette() {
     { name: "최소민", useYn: "Y" },
     { name: "최혜원", useYn: "Y" },
     { name: "한예지", useYn: "Y" },
-    { name: "김주훈 강도사님", useYn: "Y" },
-    { name: "박순성 집사님", useYn: "Y" }
+    { name: "강도사님", useYn: "Y" },
+    { name: "부장님", useYn: "Y" }
   ];
   const filteredList = list.filter((member) => member.useYn != "Y");
   const data = filteredList.map((member) => {
