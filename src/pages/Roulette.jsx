@@ -40,7 +40,7 @@ export default function Roulette() {
     { name: "강도사님", useYn: "N" },
     { name: "부장님", useYn: "N" }
   ];
-  const filteredList = list.filter((member) => member.useYn != "Y");
+  const filteredList = list.filter((member) => member.useYn !== "Y");
   const data = filteredList.map((member) => {
     return { ...member, option: member.name, percentage: Math.ceil(100 / filteredList.length) };
   });
@@ -62,6 +62,7 @@ export default function Roulette() {
           newPrizeNumber = idx;
           return true; // 누적 가중치 값이 기준점 이상이면 종료
         }
+        return false;
       });
       setPrizeNumber(newPrizeNumber);
       setMustSpin(true);

@@ -87,6 +87,7 @@ export default function Main() {
             <a
               href="https://hakik.net/"
               target="_blank"
+              rel="noopener noreferrer"
               style={{
                 textDecoration: "none",
                 color: "inherit",
@@ -97,7 +98,7 @@ export default function Main() {
                 padding: "5px"
               }}
             >
-              <img src={yjImage} style={{ width: "20px", marginRight: "10px" }} />
+              <img src={yjImage} style={{ width: "20px", marginRight: "10px" }} alt="" />
               학익교회 홈페이지
             </a>
           </div>
@@ -119,6 +120,7 @@ export default function Main() {
             <a
               href="https://www.youtube.com/channel/UCS6DpEJwttnmKNrL_ObTyfg"
               target="_blank"
+              rel="noopener noreferrer"
               style={{
                 textDecoration: "none",
                 color: "inherit",
@@ -129,7 +131,7 @@ export default function Main() {
                 padding: "5px"
               }}
             >
-              <img src={ytImage} style={{ width: "20px", marginRight: "10px" }} />
+              <img src={ytImage} style={{ width: "20px", marginRight: "10px" }} alt="" />
               학익교회 예배 유튜브
             </a>
           </div>
@@ -169,6 +171,7 @@ export default function Main() {
             <a
               href="https://www.youtube.com/channel/UC077SdkIaDGy7O9fNBIQVMg/featured"
               target="_blank"
+              rel="noopener noreferrer"
               style={{
                 textDecoration: "none",
                 color: "inherit",
@@ -179,7 +182,7 @@ export default function Main() {
                 padding: "5px"
               }}
             >
-              <img src={ytImage} style={{ width: "20px", marginRight: "10px" }} />
+              <img src={ytImage} style={{ width: "20px", marginRight: "10px" }} alt="" />
               청년부 예배 유튜브
             </a>
           </div>
@@ -201,6 +204,7 @@ export default function Main() {
             <a
               href="https://www.instagram.com/hakik_church/"
               target="_blank"
+              rel="noopener noreferrer"
               style={{
                 textDecoration: "none",
                 color: "inherit",
@@ -211,7 +215,7 @@ export default function Main() {
                 padding: "5px"
               }}
             >
-              <img src={igImage} style={{ width: "20px", marginRight: "10px" }} />
+              <img src={igImage} style={{ width: "20px", marginRight: "10px" }} alt="" />
               청년부 인스타그램
             </a>
           </div>
@@ -310,6 +314,7 @@ export default function Main() {
             <a
               href="https://map.kakao.com/?urlX=424838.0&urlY=1096590.0&itemId=9591730&q=%ED%95%99%EC%9D%B5%EC%9E%A5%EB%A1%9C%EA%B5%90%ED%9A%8C&srcid=9591730&map_type=TYPE_MAP&from=roughmap"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <img
                 className="map"
@@ -317,6 +322,7 @@ export default function Main() {
                 width="638px"
                 height="358px"
                 style={{ border: "1px solid #ddd" }}
+                alt=""
               />
             </a>
           </div>
@@ -329,7 +335,7 @@ export default function Main() {
               backgroundColor: "rgb(249, 249, 249)"
             }}
           >
-            <a href="https://map.kakao.com" target="_blank" style={{ float: "left" }}>
+            <a href="https://map.kakao.com" target="_blank" rel="noopener noreferrer" style={{ float: "left" }}>
               <img
                 src="//t1.daumcdn.net/localimg/localimages/07/2018/pc/common/logo_kakaomap.png"
                 width={72}
@@ -341,6 +347,7 @@ export default function Main() {
             <div style={{ float: "right", position: "relative", top: "1px", fontSize: "11px" }}>
               <a
                 target="_blank"
+                rel="noopener noreferrer"
                 href="https://map.kakao.com/?from=roughmap&srcid=9591730&confirmid=9591730&q=%ED%95%99%EC%9D%B5%EC%9E%A5%EB%A1%9C%EA%B5%90%ED%9A%8C&rv=on"
                 style={{
                   float: "left",
@@ -368,6 +375,7 @@ export default function Main() {
               />
               <a
                 target="_blank"
+                rel="noopener noreferrer"
                 href="https://map.kakao.com/?from=roughmap&eName=%ED%95%99%EC%9D%B5%EC%9E%A5%EB%A1%9C%EA%B5%90%ED%9A%8C&eX=424838.0&eY=1096590.0"
                 style={{
                   float: "left",
@@ -395,6 +403,7 @@ export default function Main() {
               />
               <a
                 target="_blank"
+                rel="noopener noreferrer"
                 href="https://map.kakao.com?map_type=TYPE_MAP&from=roughmap&srcid=9591730&itemId=9591730&q=%ED%95%99%EC%9D%B5%EC%9E%A5%EB%A1%9C%EA%B5%90%ED%9A%8C&urlX=424838.0&urlY=1096590.0"
                 style={{
                   float: "left",

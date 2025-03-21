@@ -42,9 +42,9 @@ export default function Card() {
   };
 
   const ClickCard = (id) => {
-    setCards(cards.map((card) => (card.id == id ? { ...card, flipped: !card.flipped } : card)));
+    setCards(cards.map((card) => (card.id === id ? { ...card, flipped: !card.flipped } : card)));
     setMainCard((prev) => {
-      const card = cards.find((card) => card.id == id);
+      const card = cards.find((card) => card.id === id);
       if (!card) return prev;
       return { ...card, flipped: !card.flipped };
     });

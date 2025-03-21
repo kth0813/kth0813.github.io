@@ -1,9 +1,10 @@
 import { Wheel } from "react-custom-roulette";
 import { useState } from "react";
 
-export default function Roulette2() {
+export default function CustomRoulette() {
   const allList =
-    "권유담,김광은,김다인,김대원,김예림,김예송,김여명,김용빈,김주원,김지원,김지주,김진명,김태훈,박도희,박병호,박예빈,박윤걸,백민서,백민우,백하영,서봉규,신지원,안예현,오송현,유리,이명철,이민수,이신우,이연우,이유나,이지우,이진호,이찬미,장진영,정회창,전솔담,주예지,차영광,최소민,한예지,강도사님,부장님";
+    "권유담,김광은,김다인,김대원,김예림,김예송,김여명,김용빈,김주원,김지원,김지주,김진명,김태훈,박도희,박병호,박예빈,박윤걸,백민서,백민우,백하영," +
+    "서봉규,신지원,안예현,오송현,유리,이명철,이민수,이신우,이연우,이유나,이지우,이진호,이찬미,장진영,정회창,전솔담,주예지,차영광,최소민,한예지,강도사님,부장님";
   const teamList = "트리플에스조,쓰루패스조,함께하조,밝히조,희희^^조";
   const [text, setText] = useState(allList);
 
@@ -12,10 +13,7 @@ export default function Roulette2() {
     .map((name) => name.trim())
     .filter(Boolean);
   const data = [
-    ...list.map((member) => ({
-      option: member,
-      percentage: Math.ceil(100 / list.length + 1)
-    })),
+    ...list.map((member) => ({ option: member, percentage: Math.ceil(100 / list.length + 1) })),
     { option: "재도전!", percentage: Math.ceil(100 / list.length + 1) }
   ];
 
@@ -36,6 +34,7 @@ export default function Roulette2() {
           newPrizeNumber = idx;
           return true;
         }
+        return false;
       });
 
       setPrizeNumber(newPrizeNumber);
@@ -92,7 +91,7 @@ export default function Roulette2() {
       </div>
       {prize.option && (
         <div style={{ fontSize: "40px", marginTop: "60px" }}>
-          {prize.option == "재도전!" ? prize.option : `당첨자 : ${prize.option} !!!`}
+          {prize.option === "재도전!" ? prize.option : `당첨자 : ${prize.option} !!!`}
         </div>
       )}
     </div>

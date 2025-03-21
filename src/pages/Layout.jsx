@@ -3,9 +3,7 @@ import Left from "./Left";
 export default function Layout({ children }) {
   return (
     <div className="layout">
-      <div className="left-sidebar">
-        <Left />
-      </div>
+      <Left />
       <div className="center-content">{children}</div>
     </div>
   );
