@@ -10,9 +10,9 @@ export default function Left() {
       <button className="buttonA" onClick={() => navigate("/roulette")}>
         룰렛 추첨
       </button>
-      <button className="buttonA" onClick={() => navigate("/card")}>
+      {/* <button className="buttonA" onClick={() => navigate("/card")}>
         카드 뽑기
-      </button>
+      </button> */}
       <button className="buttonA" onClick={() => navigate("/roulette2")}>
         커스텀 룰렛
       </button>
