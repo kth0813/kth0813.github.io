@@ -7,7 +7,7 @@ export default function Roulette() {
     { name: "김광은", useYn: "N" },
     { name: "김다인", useYn: "N" },
     { name: "김대원", useYn: "N" },
-    { name: "김예림", useYn: "N" },
+    { name: "김예림", useYn: "Y" },
     { name: "김예송", useYn: "N" },
     { name: "김여명", useYn: "N" },
     { name: "김지원", useYn: "N" },
