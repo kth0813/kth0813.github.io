@@ -1,47 +1,8 @@
 import { Wheel } from "react-custom-roulette";
-import { Fragment, useState } from "react";
+import { useState } from "react";
+import list from "./List";
 
 export default function Roulette() {
-  const list = [
-    { name: "권유담", useYn: "N" },
-    { name: "김광은", useYn: "N" },
-    { name: "김대원", useYn: "N" },
-    { name: "김예림", useYn: "N" },
-    { name: "김예송", useYn: "Y" },
-    { name: "김여명", useYn: "N" },
-    { name: "김지원", useYn: "N" },
-    { name: "김지주", useYn: "N" },
-    { name: "김태훈", useYn: "Y" },
-    { name: "박도희", useYn: "Y" },
-    { name: "박병호", useYn: "N" },
-    { name: "박예빈", useYn: "N" },
-    { name: "박윤걸", useYn: "Y" },
-    { name: "박윤지", useYn: "N" },
-    { name: "박인서", useYn: "N" },
-    { name: "백민서", useYn: "Y" },
-    { name: "백민우", useYn: "N" },
-    { name: "백하영", useYn: "N" },
-    { name: "서봉규", useYn: "N" },
-    { name: "신지원", useYn: "N" },
-    { name: "오송현", useYn: "Y" },
-    { name: "유리", useYn: "Y" },
-    { name: "이명철", useYn: "Y" },
-    { name: "이민수", useYn: "Y" },
-    { name: "이신우", useYn: "N" },
-    { name: "이연우", useYn: "N" },
-    { name: "이유나", useYn: "Y" },
-    { name: "이지우", useYn: "Y" },
-    { name: "이찬미", useYn: "Y" },
-    { name: "장진영", useYn: "N" },
-    { name: "전솔담", useYn: "Y" },
-    { name: "정다훈", useYn: "N" },
-    { name: "주예지", useYn: "N" },
-    { name: "차영광", useYn: "N" },
-    { name: "최소민", useYn: "Y" },
-    { name: "한예지", useYn: "N" },
-    { name: "강도사님", useYn: "N" },
-    { name: "부장님", useYn: "N" }
-  ];
   const filteredList = list.filter((member) => member.useYn !== "Y");
   const data = filteredList.map((member) => {
     return { ...member, option: member.name, percentage: Math.ceil(100 / filteredList.length) };
@@ -82,7 +43,16 @@ export default function Roulette() {
         돌리기
       </button>
       <div style={{ fontSize: "25px" }}>남은사람 : {data.length}명</div>
-      <div style={{ display: "flex", justifyContent: "center", marginTop: "60px" }}>
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginTop: "60px",
+          position: "relative" // 룰렛 기준
+        }}
+      >
+        {/* 룰렛 */}
         <div style={{ transform: "scale(1.2)" }}>
           <Wheel
             spinDuration={1}
@@ -92,24 +62,59 @@ export default function Roulette() {
             data={data}
             onStopSpinning={StopSpinning}
             textColors={["#3E3E3E"]}
-            backgroundColors={["#FFD8D8", "#FAE0D4", "#FAF4C0", "#CEFBC9", "#D9E5FF", "#E8D9FF", "#FFD9EC"]}
-            outerBorderColor="gray"
-            outerBorderWidth="1"
-            radiusLineColor="gray"
-            radiusLineWidth="1"
+            backgroundColors={["#E8D9FF", "#D9E5FF", "#FFD8D8", "#FAE0D4", "#F6B2C0", "#A084DC", "#B2CCFF"]}
+            outerBorderColor="#BBAAFF"
+            outerBorderWidth={10}
+            radiusLineColor="#DDDDDD"
+            radiusLineWidth={0}
             textDistance="70"
             responsive
           />
         </div>
-      </div>
-      {prize.option && (
-        <Fragment>
-          <div style={{ fontSize: "40px", marginTop: "60px" }}>당첨자 : {prize.option} !!!</div>
-          <div style={{ fontSize: "25px" }}>
-            금요일까지 윤걸총무님에게 <br /> 답변을 보내주세요 !
+        {prize.option && (
+          <div
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              zIndex: 10,
+              backgroundColor: "white",
+              border: "3px solid #A084DC",
+              borderRadius: "12px",
+              padding: "30px 40px",
+              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
+              textAlign: "center",
+              animation: "scaleUp 0.4s ease-out, fadeScale 0.6s ease-out, blinkBorder 1s infinite ease-in-out"
+            }}
+          >
+            <div style={{ fontSize: "32px", fontWeight: "bold", color: "#8661C1" }}>
+              <div
+                style={{
+                  animation: "spinIcon 3s linear infinite",
+                  fontSize: "30px",
+                  display: "inline-block"
+                }}
+              >
+                🎉
+              </div>{" "}
+              당첨자 : {prize.option}{" "}
+              <div
+                style={{
+                  animation: "spinIcon 3s linear infinite",
+                  fontSize: "30px",
+                  display: "inline-block"
+                }}
+              >
+                🎉
+              </div>
+            </div>
+            <div style={{ fontSize: "20px", marginTop: "10px" }}>
+              금요일까지 윤걸총무님에게 <br /> 답변을 보내주세요!
+            </div>
           </div>
-        </Fragment>
-      )}
+        )}
+      </div>
     </div>
   );
 }

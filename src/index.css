@@ -53,3 +53,32 @@ ul {
   color: black;
   font-weight: bold;
 }
+@keyframes scaleUp {
+  0% {
+    transform: translate(-50%, -50%) scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+@keyframes blinkBorder {
+  0% {
+    border-color: #a084dc;
+  }
+  50% {
+    border-color: #ff8dc7;
+  }
+  100% {
+    border-color: #a084dc;
+  }
+}
+@keyframes spinIcon {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
