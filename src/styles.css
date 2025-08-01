@@ -589,8 +589,11 @@ td {
   justify-content: center;
   align-items: center;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
 }
-
+.social-button:hover {
+  transform: scale(1.03);
+}
 .social-link {
   display: flex;
   align-items: center;
@@ -604,7 +607,11 @@ td {
 .social-icon {
   width: 20px;
 }
-
+.social-label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
 .worship-table {
   margin: auto;
   border-collapse: separate;
@@ -629,8 +636,7 @@ td {
 .map-wrapper {
   width: 640px;
   border-radius: 15px;
-
-  margin: auto;
+  margin: 20px auto;
   background-color: white;
   padding: 10px;
   color: #333;

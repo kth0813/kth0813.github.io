@@ -128,14 +128,15 @@ export default function Main() {
     </div>
   );
 }
-
 function SocialButton({ href, icon, label }) {
+  const handleClick = () => {
+    window.open(href, "_blank", "noopener,noreferrer");
+  };
+
   return (
-    <div className="social-button">
-      <a href={href} target="_blank" rel="noopener noreferrer" className="social-link">
-        <img src={icon} alt="" className="social-icon" />
-        {label}
-      </a>
+    <div className="social-button" onClick={handleClick} style={{ cursor: "pointer" }}>
+      <img src={icon} className="social-icon" />
+      <span className="social-label">{label}</span>
     </div>
   );
 }
