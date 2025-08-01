@@ -36,6 +36,18 @@ export default function Roulette() {
     setMustSpin(false);
     setPrize(data[prizeNumber]);
   };
+
+  const result = (prize) => {
+    switch (prize.type) {
+      case "M":
+        return `${prize.name} 형제`;
+      case "F":
+        return `${prize.name} 자매`;
+      default:
+        return prize.name;
+    }
+  };
+
   return (
     <div className="roulette-page">
       <div className="roulette-header">룰렛 추첨</div>
@@ -68,7 +80,7 @@ export default function Roulette() {
             <button className="close-button" onClick={() => setPrize({})}>
               ×
             </button>
-            <div className="result-title">🎉 당첨자 : {prize.option} 🎉</div>
+            <div className="result-title">🎉 당첨자 : {result(prize)} 🎉</div>
             <div className="result-text">
               금요일까지 윤걸총무님에게 <br /> 답변을 보내주세요!
             </div>

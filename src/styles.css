@@ -713,3 +713,77 @@ td {
 .close-button:hover {
   color: #6b45c2;
 }
+/* 모바일 반응형 (최대 너비 768px 기준) */
+@media screen and (max-width: 768px) {
+  .main-title,
+  .intro-section,
+  .social-button-group {
+    width: 95%;
+    padding: 10px;
+    font-size: 20px;
+  }
+
+  .social-button-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .social-button {
+    width: 90%;
+    font-size: 14px;
+  }
+
+  .cell {
+    width: 95%;
+    font-size: 16px;
+  }
+
+  .map-wrapper {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .map-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .worship-table {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .left-aside {
+    display: none; /* 모바일에서 왼쪽 메뉴 숨김 */
+  }
+
+  .roulette-header,
+  .main-title {
+    font-size: 24px;
+  }
+
+  .spin-button {
+    width: 100px;
+    height: 100px;
+    font-size: 16px;
+  }
+
+  .result-popup {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .result-title {
+    font-size: 24px;
+  }
+
+  .result-text {
+    font-size: 16px;
+  }
+
+  .retry-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
