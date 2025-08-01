@@ -696,3 +696,20 @@ td {
 .left-link:hover {
   color: #a084dc;
 }
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: #a084dc;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.close-button:hover {
+  color: #6b45c2;
+}

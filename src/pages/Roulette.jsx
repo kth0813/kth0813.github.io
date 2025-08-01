@@ -65,6 +65,9 @@ export default function Roulette() {
         </button>
         {prize.option && (
           <div className="result-popup">
+            <button className="close-button" onClick={() => setPrize({})}>
+              ×
+            </button>
             <div className="result-title">🎉 당첨자 : {prize.option} 🎉</div>
             <div className="result-text">
               금요일까지 윤걸총무님에게 <br /> 답변을 보내주세요!
