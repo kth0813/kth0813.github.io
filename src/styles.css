@@ -713,77 +713,38 @@ td {
 .close-button:hover {
   color: #6b45c2;
 }
-/* 모바일 반응형 (최대 너비 768px 기준) */
+.hamburger-button {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  font-size: 30px;
+  background: transparent;
+  border: none;
+  color: #a084dc;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 768px) {
-  .main-title,
-  .intro-section,
-  .social-button-group {
-    width: 95%;
-    padding: 10px;
-    font-size: 20px;
+  .hamburger-button {
+    display: block;
   }
 
-  .social-button-group {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+  .left-wrapper {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background: #f8f4ff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    overflow-y: auto;
   }
 
-  .social-button {
-    width: 90%;
-    font-size: 14px;
-  }
-
-  .cell {
-    width: 95%;
-    font-size: 16px;
-  }
-
-  .map-wrapper {
-    width: 95%;
-    padding: 10px;
-  }
-
-  .map-image img {
-    width: 100%;
-    height: auto;
-  }
-
-  .worship-table {
-    font-size: 14px;
-    width: 100%;
-  }
-
-  .left-aside {
-    display: none; /* 모바일에서 왼쪽 메뉴 숨김 */
-  }
-
-  .roulette-header,
-  .main-title {
-    font-size: 24px;
-  }
-
-  .spin-button {
-    width: 100px;
-    height: 100px;
-    font-size: 16px;
-  }
-
-  .result-popup {
-    width: 90%;
-    padding: 20px;
-  }
-
-  .result-title {
-    font-size: 24px;
-  }
-
-  .result-text {
-    font-size: 16px;
-  }
-
-  .retry-button {
-    font-size: 14px;
-    padding: 8px 16px;
+  .left-wrapper.show {
+    display: block;
   }
 }
