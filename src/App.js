@@ -4,7 +4,6 @@ import Card from "./pages/Card";
 import Layout from "./pages/Layout";
 import Roulette from "./pages/Roulette";
 import CustomRoulette from "./pages/CustomRoulette";
-import "./styles.css";
 
 export default function App() {
   return (

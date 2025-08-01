@@ -7,23 +7,23 @@ export default function Roulette() {
   const data = filteredList.map((member) => {
     return { ...member, option: member.name, percentage: Math.ceil(100 / filteredList.length) };
   });
-  const [mustSpin, setMustSpin] = useState(false); //룰렛이 회전 애니메이션을 시작
-  const [prizeNumber, setPrizeNumber] = useState(0); //당첨 인덱스
+  const [mustSpin, setMustSpin] = useState(false);
+  const [prizeNumber, setPrizeNumber] = useState(0);
   const [prize, setPrize] = useState({});
+
   const handleSpinClick = () => {
     setPrize({});
     if (!mustSpin) {
-      const pivot = Math.floor(Math.random() * 99 + 1); // 랜덤 기준점 설정
-      let stack = 0; // 가중치
+      const pivot = Math.floor(Math.random() * 99 + 1);
+      let stack = 0;
       let percentage = data.map((row) => row.percentage);
-      let newPrizeNumber = null; //당첨 인덱스
+      let newPrizeNumber = null;
 
       percentage.some((row, idx) => {
-        stack += row; // 가중치 누적
-
+        stack += row;
         if (pivot <= stack) {
           newPrizeNumber = idx;
-          return true; // 누적 가중치 값이 기준점 이상이면 종료
+          return true;
         }
         return false;
       });
@@ -36,24 +36,12 @@ export default function Roulette() {
     setMustSpin(false);
     setPrize(data[prizeNumber]);
   };
-
   return (
-    <div className="App" style={{ paddingTop: "20px" }}>
-      <button className="buttonA" onClick={handleSpinClick}>
-        돌리기
-      </button>
-      <div style={{ fontSize: "25px" }}>남은사람 : {data.length}명</div>
+    <div className="roulette-page">
+      <div className="roulette-header">룰렛 추첨</div>
 
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          marginTop: "60px",
-          position: "relative" // 룰렛 기준
-        }}
-      >
-        {/* 룰렛 */}
-        <div style={{ transform: "scale(1.2)" }}>
+      <div className="roulette-container">
+        <div className="roulette-wheel">
           <Wheel
             spinDuration={1}
             startingOptionIndex={Math.floor(Math.random() * data.length)}
@@ -71,50 +59,24 @@ export default function Roulette() {
             responsive
           />
         </div>
+
+        <button className="spin-button" onClick={handleSpinClick}>
+          돌리기
+        </button>
         {prize.option && (
-          <div
-            style={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-              zIndex: 10,
-              backgroundColor: "white",
-              border: "3px solid #A084DC",
-              borderRadius: "12px",
-              padding: "30px 40px",
-              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
-              textAlign: "center",
-              animation: "scaleUp 0.4s ease-out, fadeScale 0.6s ease-out, blinkBorder 1s infinite ease-in-out"
-            }}
-          >
-            <div style={{ fontSize: "32px", fontWeight: "bold", color: "#8661C1" }}>
-              <div
-                style={{
-                  animation: "spinIcon 3s linear infinite",
-                  fontSize: "30px",
-                  display: "inline-block"
-                }}
-              >
-                🎉
-              </div>{" "}
-              당첨자 : {prize.option}{" "}
-              <div
-                style={{
-                  animation: "spinIcon 3s linear infinite",
-                  fontSize: "30px",
-                  display: "inline-block"
-                }}
-              >
-                🎉
-              </div>
-            </div>
-            <div style={{ fontSize: "20px", marginTop: "10px" }}>
+          <div className="result-popup">
+            <div className="result-title">🎉 당첨자 : {prize.option} 🎉</div>
+            <div className="result-text">
               금요일까지 윤걸총무님에게 <br /> 답변을 보내주세요!
             </div>
+            <button className="retry-button" onClick={handleSpinClick}>
+              다시 돌리기
+            </button>
           </div>
         )}
       </div>
+
+      <div className="remain-text">남은 사람: {data.length}명</div>
     </div>
   );
 }

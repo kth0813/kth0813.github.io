@@ -1,23 +1,23 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Left() {
-  const navigate = useNavigate();
   return (
-    <div className="left-sidebar">
-      <div>
-        <button className="buttonA" onClick={() => navigate("/main")}>
-          메인 화면
-        </button>
-        <button className="buttonA" onClick={() => navigate("/roulette")}>
-          룰렛 추첨
-        </button>
-        {/* <button className="buttonA" onClick={() => navigate("/card")}>
-        카드 뽑기
-      </button> */}
-        <button className="buttonA" onClick={() => navigate("/croulette")}>
-          커스텀 룰렛
-        </button>
-      </div>
-    </div>
+    <aside className="left-aside">
+      <h2 className="left-title">✨ 메뉴 ✨</h2>
+      <nav>
+        <ul className="left-menu">
+          <li className="left-menu-item">
+            <Link to="/main" className="left-link">
+              홈
+            </Link>
+          </li>
+          <li className="left-menu-item">
+            <Link to="/roulette" className="left-link">
+              룰렛
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </aside>
   );
 }
