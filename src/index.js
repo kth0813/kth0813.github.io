@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./styles.css?20250805";
+import "./styles.css?20250807";
 import "./img/fontawesome-free-6.1.1-web/css/all.css";
 
 import App from "./App";

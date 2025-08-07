@@ -49,9 +49,8 @@ export default function Roulette() {
   };
 
   return (
-    <div className="roulette-page">
-      <div className="roulette-header">룰렛 추첨</div>
-
+    <div className="page">
+      <div className="header">룰렛 추첨</div>
       <div className="roulette-container">
         <div className="roulette-wheel">
           <Wheel

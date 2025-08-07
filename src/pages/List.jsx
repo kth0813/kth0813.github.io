@@ -1,4 +1,4 @@
-const list = [
+export default [
   { name: "권유담", type: "F", useYn: "N" },
   { name: "김광은", type: "M", useYn: "N" },
   { name: "김대원", type: "M", useYn: "N" },
@@ -7,7 +7,7 @@ const list = [
   { name: "김여명", type: "M", useYn: "N" },
   { name: "김지원", type: "M", useYn: "N" },
   { name: "김지주", type: "M", useYn: "N" },
-  { name: "김찬우", type: "M", useYn: "N" },
+  { name: "김찬우", type: "M", useYn: "Y" },
   { name: "김태훈", type: "M", useYn: "Y" },
   { name: "박도희", type: "F", useYn: "Y" },
   { name: "박병호", type: "M", useYn: "N" },
@@ -20,6 +20,7 @@ const list = [
   { name: "백하영", type: "F", useYn: "N" },
   { name: "서봉규", type: "M", useYn: "N" },
   { name: "신지원", type: "F", useYn: "N" },
+  { name: "안예현", type: "M", useYn: "N" },
   { name: "오송현", type: "F", useYn: "Y" },
   { name: "유리", type: "F", useYn: "Y" },
   { name: "이명철", type: "M", useYn: "Y" },
@@ -39,5 +40,3 @@ const list = [
   { name: "강도사님", type: "N", useYn: "N" },
   { name: "부장님", type: "N", useYn: "N" }
 ];
-
-export default list;
