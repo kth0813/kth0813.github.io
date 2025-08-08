@@ -89,7 +89,7 @@ export default function Main() {
             <tbody>
               <tr>
                 <td className="worship-cell">주일 예배</td>
-                <td className="worship-cell">주일 오전 9시 11시, 오후 2시</td>
+                <td className="worship-cell">주일 오전 9시, 11시, 오후 2시</td>
               </tr>
               <tr>
                 <td className="worship-cell">청년부 예배</td>
