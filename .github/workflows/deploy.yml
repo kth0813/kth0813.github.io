@@ -1,0 +1,47 @@
+name: Deploy GitHub Pages
+
+# 1. 트리거: 'source' 브랜치에 push 이벤트가 발생하면 실행
+on:
+  push:
+    branches:
+      - source # 기본 브랜치 이름에 맞게 (source 또는 dev 등)
+
+permissions:
+  contents: write # 'main' 브랜치에 푸시하려면 쓰기 권한 필요
+
+jobs:
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }} # 동시 실행 제어
+    runs-on: ubuntu-latest # 실행 환경
+    steps:
+      # 2. 소스코드 체크아웃
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 3. Node.js 환경 설정 (package.json의 node 버전에 맞추면 좋음)
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18 # 18 또는 20 등
+
+      # 4. 의존성 설치 (npm ci가 npm install보다 빠름)
+      - name: Install dependencies
+        run: npm ci
+
+      # 5. React 빌드 (package.json의 homepage 설정 필요!)
+      #    (1번 방법에서 설명한 "homepage" 설정은 똑같이 해줘야 해)
+      - name: Build
+        run: npm run build
+
+      # 6. 빌드 결과물을 'main' 브랜치로 배포
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          # GitHub Actions가 커밋할 때 사용할 토큰
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # 빌드 결과물이 있는 폴더 (CRA 기본값)
+          publish_dir: ./build
+          # 배포할 브랜치 (User 페이지는 'main')
+          publish_branch: main
+          # 커밋 메시지
+          commit_message: "Deploy [auto]: ${{ github.event.head_commit.message }}"
