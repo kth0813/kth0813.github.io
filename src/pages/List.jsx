@@ -1,13 +1,13 @@
 export default [
   { name: "권유담", type: "F", useYn: "Y" },
   { name: "김광은", type: "M", useYn: "N" },
-  { name: "김대원", type: "M", useYn: "N" },
+  { name: "김대원", type: "M", useYn: "Y" },
   { name: "김예림", type: "F", useYn: "N" },
   { name: "김예송", type: "F", useYn: "Y" },
   { name: "김여명", type: "M", useYn: "N" },
   { name: "김지원", type: "M", useYn: "N" },
   { name: "김지주", type: "M", useYn: "N" },
-  { name: "김찬우", type: "M", useYn: "N" },
+  { name: "김찬우", type: "M", useYn: "Y" },
   { name: "김태훈", type: "M", useYn: "Y" },
   { name: "박도희", type: "F", useYn: "Y" },
   { name: "박병호", type: "M", useYn: "N" },
@@ -40,6 +40,6 @@ export default [
   { name: "차영광", type: "M", useYn: "N" },
   { name: "최소민", type: "F", useYn: "Y" },
   { name: "한예지", type: "F", useYn: "N" },
-  { name: "강도사님", type: "N", useYn: "N" },
+  { name: "목사(진)님", type: "N", useYn: "N" },
   { name: "부장님", type: "N", useYn: "N" }
 ];
