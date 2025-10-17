@@ -30,7 +30,7 @@ export default function BoardEdit() {
     } else {
       loadPost();
     }
-  }, [id, user, navigate, loadPost]);
+  }, [id, user, navigate]);
 
   const handleUpdate = () => {
     if (!title.trim()) return alertInfo("제목을 입력해주세요");

@@ -25,7 +25,7 @@ export default function Card() {
     };
     shuffleCard();
     centerCards();
-  }, [shuffleCard]);
+  }, []);
 
   const generateRandomImg = () => {
     const shuffledTexts = [];

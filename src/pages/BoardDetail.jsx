@@ -21,7 +21,7 @@ export default function BoardDetail() {
       else setPost(null);
     };
     loadPost();
-  }, [id, loadPost]);
+  }, [id]);
 
   const handleDelete = () => {
     if (!user) return alertInfo("로그인이 필요합니다.", () => navigate("/login"));
