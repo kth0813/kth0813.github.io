@@ -14,19 +14,19 @@ export default function Card() {
   ];
 
   useEffect(() => {
+    const shuffleCard = () => {
+      const texts = generateRandomImg();
+      const initialCards = texts.reduce((acc, img) => {
+        return [...acc, { id: acc.length, img, flipped: false }];
+      }, []);
+      const shuffledCards = initialCards.sort(() => Math.random() - 0.5);
+      const selectedCards = shuffledCards.slice(0, 8);
+      setCards(selectedCards);
+    };
     shuffleCard();
     centerCards();
-  }, [shuffleCard, centerCards]);
+  }, [shuffleCard]);
 
-  const shuffleCard = () => {
-    const texts = generateRandomImg();
-    const initialCards = texts.reduce((acc, img) => {
-      return [...acc, { id: acc.length, img, flipped: false }];
-    }, []);
-    const shuffledCards = initialCards.sort(() => Math.random() - 0.5);
-    const selectedCards = shuffledCards.slice(0, 8);
-    setCards(selectedCards);
-  };
   const generateRandomImg = () => {
     const shuffledTexts = [];
     const selectedTexts = new Set();

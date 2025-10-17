@@ -14,16 +14,23 @@ export default function BoardEdit() {
   const [body, setBody] = useState("");
   const [post, setPost] = useState(null);
 
-  const loadPost = async () => {
-    const docRef = doc(db, "board", id);
-    const docSnap = await getDoc(docRef);
-    if (docSnap.exists()) {
-      const data = docSnap.data();
-      setPost({ id: docSnap.id, ...data });
-      setTitle(data.title || "");
-      setBody(data.body || "");
+  useEffect(() => {
+    const loadPost = async () => {
+      const docRef = doc(db, "board", id);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        const data = docSnap.data();
+        setPost({ id: docSnap.id, ...data });
+        setTitle(data.title || "");
+        setBody(data.body || "");
+      }
+    };
+    if (!user) {
+      alertInfo("로그인이 필요합니다.", () => navigate("/login"));
+    } else {
+      loadPost();
     }
-  };
+  }, [id, user, navigate, loadPost]);
 
   const handleUpdate = () => {
     if (!title.trim()) return alertInfo("제목을 입력해주세요");
@@ -42,14 +49,6 @@ export default function BoardEdit() {
       navigate(`/board/${id}`);
     });
   };
-
-  useEffect(() => {
-    if (!user) {
-      alertInfo("로그인이 필요합니다.", () => navigate("/login"));
-    } else {
-      loadPost();
-    }
-  }, [id, user, navigate, loadPost]);
 
   return (
     <div className="page">

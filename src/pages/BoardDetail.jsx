@@ -12,14 +12,16 @@ export default function BoardDetail() {
   const navigate = useNavigate();
   const [post, setPost] = useState(null);
 
-  const loadPost = async () => {
-    const docRef = doc(db, "board", id);
-    const docSnap = await getDoc(docRef);
-    if (docSnap.exists()) setPost({ id: docSnap.id, ...docSnap.data() });
-    else setPost(null);
-  };
-
   const isOwner = user && post && post.ownerUid === user.uid;
+  useEffect(() => {
+    const loadPost = async () => {
+      const docRef = doc(db, "board", id);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) setPost({ id: docSnap.id, ...docSnap.data() });
+      else setPost(null);
+    };
+    loadPost();
+  }, [id, loadPost]);
 
   const handleDelete = () => {
     if (!user) return alertInfo("로그인이 필요합니다.", () => navigate("/login"));
@@ -36,11 +38,6 @@ export default function BoardDetail() {
     if (!isOwner) return alertInfo("본인 글만 수정할 수 있습니다.");
     navigate(`/board/edit/${id}`);
   };
-
-  useEffect(() => {
-    loadPost();
-  }, [id, loadPost]);
-
   if (post == null) return <div style={{ padding: "2rem" }}>게시글이 존재하지 않습니다.</div>;
 
   return (
