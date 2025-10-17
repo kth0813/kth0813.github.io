@@ -14,6 +14,19 @@ export default function Card() {
   ];
 
   useEffect(() => {
+    const generateRandomImg = () => {
+      const shuffledTexts = [];
+      const selectedTexts = new Set();
+      while (shuffledTexts.length < 8) {
+        const newText = allImg.flat()[Math.floor(Math.random() * allImg.flat().length)];
+        if (!selectedTexts.has(newText)) {
+          selectedTexts.add(newText);
+          shuffledTexts.push(newText);
+        }
+      }
+
+      return shuffledTexts;
+    };
     const shuffleCard = () => {
       const texts = generateRandomImg();
       const initialCards = texts.reduce((acc, img) => {
@@ -26,20 +39,6 @@ export default function Card() {
     shuffleCard();
     centerCards();
   }, []);
-
-  const generateRandomImg = () => {
-    const shuffledTexts = [];
-    const selectedTexts = new Set();
-    while (shuffledTexts.length < 8) {
-      const newText = allImg.flat()[Math.floor(Math.random() * allImg.flat().length)];
-      if (!selectedTexts.has(newText)) {
-        selectedTexts.add(newText);
-        shuffledTexts.push(newText);
-      }
-    }
-
-    return shuffledTexts;
-  };
 
   const ClickCard = (id) => {
     setCards(cards.map((card) => (card.id === id ? { ...card, flipped: !card.flipped } : card)));
