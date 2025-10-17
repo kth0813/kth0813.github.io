@@ -1,4 +1,4 @@
-export default [
+const list = [
   { name: "권유담", type: "F", useYn: "Y" },
   { name: "김광은", type: "M", useYn: "N" },
   { name: "김대원", type: "M", useYn: "Y" },
@@ -43,3 +43,4 @@ export default [
   { name: "목사(진)님", type: "N", useYn: "N" },
   { name: "부장님", type: "N", useYn: "N" }
 ];
+export default list;

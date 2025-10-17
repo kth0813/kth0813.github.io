@@ -39,7 +39,7 @@ export default function BoardDetail() {
 
   useEffect(() => {
     loadPost();
-  }, [id]);
+  }, [id, loadPost]);
 
   if (post == null) return <div style={{ padding: "2rem" }}>게시글이 존재하지 않습니다.</div>;
 

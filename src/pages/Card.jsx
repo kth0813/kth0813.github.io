@@ -16,7 +16,7 @@ export default function Card() {
   useEffect(() => {
     shuffleCard();
     centerCards();
-  }, []);
+  }, [shuffleCard, centerCards]);
 
   const shuffleCard = () => {
     const texts = generateRandomImg();

@@ -12,7 +12,7 @@ function SocialButton({ href, icon, label }) {
 
   return (
     <div className="social-button" onClick={handleClick} style={{ cursor: "pointer" }}>
-      <img src={icon} className="social-icon" />
+      <img src={icon} className="social-icon" alt="" />
       <span className="social-label">{label}</span>
     </div>
   );

@@ -49,7 +49,7 @@ export default function BoardEdit() {
     } else {
       loadPost();
     }
-  }, [id, user, navigate]);
+  }, [id, user, navigate, loadPost]);
 
   return (
     <div className="page">

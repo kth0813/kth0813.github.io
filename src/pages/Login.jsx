@@ -57,9 +57,9 @@ export default function Login() {
         "auth/wrong-password"
       ];
       if (invalidCode.includes(e.code)) alertInfo("이메일 혹은 비밀번호가 일치하지 않습니다.");
-      else if (e.code == "auth/network-request-failed") alertInfo("네트워크 연결에 실패 하였습니다.");
-      else if (e.code == "auth/invalid-email") alertInfo("잘못된 이메일 형식입니다.");
-      else if (e.code == "auth/internal-error") alertInfo("잘못된 요청입니다.");
+      else if (e.code === "auth/network-request-failed") alertInfo("네트워크 연결에 실패 하였습니다.");
+      else if (e.code === "auth/invalid-email") alertInfo("잘못된 이메일 형식입니다.");
+      else if (e.code === "auth/internal-error") alertInfo("잘못된 요청입니다.");
       else alertInfo("로그인에 실패하였습니다.");
     } finally {
       setLoading(false);
