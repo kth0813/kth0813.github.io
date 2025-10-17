@@ -40,7 +40,7 @@ const list = [
   { name: "차영광", type: "M", useYn: "N" },
   { name: "최소민", type: "F", useYn: "Y" },
   { name: "한예지", type: "F", useYn: "N" },
-  { name: "목사(진)님", type: "N", useYn: "N" },
+  { name: "목사(진)dd님", type: "N", useYn: "N" },
   { name: "부장님", type: "N", useYn: "N" }
 ];
 export default list;
