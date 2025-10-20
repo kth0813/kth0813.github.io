@@ -35,12 +35,12 @@ const list = [
   { name: "이찬미", type: "F", useYn: "Y" },
   { name: "장진영", type: "M", useYn: "N" },
   { name: "전솔담", type: "M", useYn: "Y" },
-  { name: "정다훈", type: "M", useYn: "N" },
+  { name: "정다훈", type: "M", useYn: "Y" },
   { name: "주예지", type: "F", useYn: "N" },
   { name: "차영광", type: "M", useYn: "N" },
   { name: "최소민", type: "F", useYn: "Y" },
   { name: "한예지", type: "F", useYn: "N" },
-  { name: "목사(진)님", type: "N", useYn: "N" },
+  { name: "목사님", type: "N", useYn: "Y" },
   { name: "부장님", type: "N", useYn: "N" }
 ];
 export default list;
