@@ -5,6 +5,7 @@ const list = [
   { name: "김예림", type: "F", useYn: "Y" },
   { name: "김예송", type: "F", useYn: "Y" },
   { name: "김여명", type: "M", useYn: "N" },
+  { name: "김유석", type: "M", useYn: "N" },
   { name: "김지원", type: "M", useYn: "N" },
   { name: "김지주", type: "M", useYn: "N" },
   { name: "김찬우", type: "M", useYn: "Y" },
@@ -20,7 +21,7 @@ const list = [
   { name: "백하영", type: "F", useYn: "Y" },
   { name: "서봉규", type: "M", useYn: "Y" },
   { name: "신기락", type: "M", useYn: "N" },
-  { name: "신성호", type: "M", useYn: "N" },
+  { name: "신성호", type: "M", useYn: "Y" },
   { name: "신예은", type: "F", useYn: "N" },
   { name: "신지원", type: "F", useYn: "Y" },
   { name: "안예현", type: "M", useYn: "N" },
@@ -39,7 +40,9 @@ const list = [
   { name: "주예지", type: "F", useYn: "Y" },
   { name: "차영광", type: "M", useYn: "N" },
   { name: "최소민", type: "F", useYn: "Y" },
+  { name: "최우석", type: "M", useYn: "N" },
   { name: "한예지", type: "F", useYn: "N" },
+  { name: "황유빈", type: "F", useYn: "N" },
   { name: "목사님", type: "N", useYn: "Y" },
   { name: "부장님", type: "N", useYn: "N" }
 ];
