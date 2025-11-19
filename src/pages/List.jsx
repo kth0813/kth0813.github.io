@@ -42,7 +42,7 @@ const list = [
   { name: "최소민", type: "F", useYn: "Y" },
   { name: "최우석", type: "M", useYn: "N" },
   { name: "한예지", type: "F", useYn: "N" },
-  { name: "황유빈", type: "F", useYn: "N" },
+  { name: "황유빈", type: "F", useYn: "Y" },
   { name: "목사님", type: "N", useYn: "Y" },
   { name: "부장님", type: "N", useYn: "N" }
 ];
