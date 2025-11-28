@@ -34,7 +34,7 @@ const list = [
   { name: "이유나", type: "F", useYn: "Y" },
   { name: "이지우", type: "M", useYn: "Y" },
   { name: "이찬미", type: "F", useYn: "Y" },
-  { name: "장진영", type: "M", useYn: "N" },
+  { name: "장진영", type: "M", useYn: "Y" },
   { name: "전솔담", type: "M", useYn: "Y" },
   { name: "정다훈", type: "M", useYn: "Y" },
   { name: "주예지", type: "F", useYn: "Y" },
