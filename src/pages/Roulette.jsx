@@ -66,6 +66,7 @@ export default function Roulette() {
             outerBorderWidth={10}
             radiusLineColor="#FFD700"
             radiusLineWidth={2}
+            fontFamily="Cafe24Ssurround"
             textDistance="70"
             responsive
             pointerProps={{
@@ -75,7 +76,7 @@ export default function Roulette() {
                 height: "50px",
                 marginTop: "25px",
                 marginRight: "25px",
-                transform: "rotate(45deg)" /* 시계방향으로 45도 회전 */
+                transform: "rotate(45deg)"
               }
             }}
           />
@@ -87,7 +88,7 @@ export default function Roulette() {
         {prize.option && (
           <div className="result-popup">
             <button className="close-button" onClick={() => setPrize({})}>
-              ×
+              X
             </button>
             <div className="result-title">🎉 당첨자 : {result(prize)} 🎉</div>
             <div className="result-text">
