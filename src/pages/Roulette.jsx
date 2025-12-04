@@ -82,7 +82,7 @@ export default function Roulette() {
         </div>
 
         <button className="spin-button" onClick={handleSpinClick}>
-          돌리기
+          {mustSpin ? "추첨 중..." : "돌리기"}
         </button>
         {prize.option && (
           <div className="result-popup">

@@ -133,6 +133,7 @@ export default function Main() {
                 <img
                   src="http://t1.daumcdn.net/roughmap/imgmap/9bed308c9181a25ed389f3a10c38989023fba6484853a07c87ce24c10d1e69ee"
                   alt="지도"
+                  style={{ height: "300px", width: "600px" }}
                 />
               </a>
             </div>
