@@ -7,7 +7,7 @@ export default function Layout({ children }) {
   const handleCloseMenu = () => setShowMenu(false);
 
   return (
-    <div style={{ display: "flex", minHeight: "100vh", background: "#fffafc", position: "relative" }}>
+    <div style={{ display: "flex", minHeight: "100vh", position: "relative" }}>
       <button className="hamburger-button" onClick={() => setShowMenu(!showMenu)}>
         ☰
       </button>

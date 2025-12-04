@@ -47,7 +47,7 @@ export default function Roulette() {
         return prize.name;
     }
   };
-
+  const goldPointer = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><path d="M30 60 L0 0 H60 Z" fill="%23FFD700" stroke="%23FFFFFF" stroke-width="2"/><circle cx="30" cy="15" r="8" fill="%23c41e3a" stroke="%23FFFFFF" stroke-width="1"/></svg>`;
   return (
     <div className="page">
       <div className="header">룰렛 추첨</div>
@@ -60,14 +60,24 @@ export default function Roulette() {
             prizeNumber={prizeNumber}
             data={data}
             onStopSpinning={StopSpinning}
-            textColors={["#3E3E3E"]}
-            backgroundColors={["#E8D9FF", "#D9E5FF", "#FFD8D8", "#FAE0D4", "#F6B2C0", "#A084DC", "#B2CCFF"]}
-            outerBorderColor="#BBAAFF"
+            textColors={["#FFFFFF", "#3E3E3E", "#FFFFFF", "#3E3E3E"]}
+            backgroundColors={["#8B0000", "#D4AF37", "#006400", "#FFFDD0"]}
+            outerBorderColor="#FFD700"
             outerBorderWidth={10}
-            radiusLineColor="#DDDDDD"
-            radiusLineWidth={0}
+            radiusLineColor="#FFD700"
+            radiusLineWidth={2}
             textDistance="70"
             responsive
+            pointerProps={{
+              src: goldPointer,
+              style: {
+                width: "50px",
+                height: "50px",
+                marginTop: "25px",
+                marginRight: "25px",
+                transform: "rotate(45deg)" /* 시계방향으로 45도 회전 */
+              }
+            }}
           />
         </div>
 
@@ -89,8 +99,9 @@ export default function Roulette() {
           </div>
         )}
       </div>
-
-      <div className="remain-text">남은 사람: {data.length}명</div>
+      <div className="ac">
+        <div className="remain-text">남은 사람: {data.length}명</div>
+      </div>
     </div>
   );
 }
