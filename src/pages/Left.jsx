@@ -43,7 +43,7 @@ export default function Left({ onClickLink }) {
               게시판
             </Link>
           </li>
-          <li className="left-menu-item">
+          {/* <li className="left-menu-item">
             {user ? (
               <div
                 className="left-link"
@@ -57,7 +57,7 @@ export default function Left({ onClickLink }) {
                 로그인
               </Link>
             )}
-          </li>
+          </li> */}
         </ul>
       </nav>
     </aside>
