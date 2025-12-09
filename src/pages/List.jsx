@@ -4,7 +4,7 @@ const list = [
   { name: "김대원", type: "M", useYn: "Y" },
   { name: "김예림", type: "F", useYn: "Y" },
   { name: "김예송", type: "F", useYn: "Y" },
-  { name: "김여명", type: "M", useYn: "N" },
+  { name: "김여명", type: "M", useYn: "Y" },
   { name: "김유석", type: "M", useYn: "N" },
   { name: "김지원", type: "M", useYn: "N" },
   { name: "김지주", type: "M", useYn: "N" },
