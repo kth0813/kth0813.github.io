@@ -20,7 +20,7 @@ const list = [
   { name: "백민우", type: "M", useYn: "Y" },
   { name: "백하영", type: "F", useYn: "Y" },
   { name: "서봉규", type: "M", useYn: "Y" },
-  { name: "신기락", type: "M", useYn: "N" },
+  { name: "신기락", type: "M", useYn: "Y" },
   { name: "신성호", type: "M", useYn: "Y" },
   { name: "신예은", type: "F", useYn: "N" },
   { name: "신지원", type: "F", useYn: "Y" },
