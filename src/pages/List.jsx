@@ -44,6 +44,6 @@ const list = [
   { name: "한예지", type: "F", useYn: "N" },
   { name: "황유빈", type: "F", useYn: "Y" },
   { name: "목사님", type: "N", useYn: "Y" },
-  { name: "부장님2", type: "N", useYn: "Y" }
+  { name: "부장님", type: "N", useYn: "Y" }
 ];
 export default list;
