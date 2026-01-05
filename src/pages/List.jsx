@@ -38,7 +38,7 @@ const list = [
   { name: "전솔담", type: "M", useYn: "Y" },
   { name: "정다훈", type: "M", useYn: "Y" },
   { name: "주예지", type: "F", useYn: "Y" },
-  { name: "차영광", type: "M", useYn: "N" },
+  { name: "차영광", type: "M", useYn: "Y" },
   { name: "최소민", type: "F", useYn: "Y" },
   { name: "최우석", type: "M", useYn: "N" },
   { name: "한예지", type: "F", useYn: "N" },
