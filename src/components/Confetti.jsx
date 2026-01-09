@@ -6,7 +6,7 @@ import c3 from "../img/confetti/confetti3.png";
 import c4 from "../img/confetti/confetti4.png";
 
 const IMAGES = [c1, c2, c3, c4];
-const PARTICLE_COUNT = 16; // 총 입자 수
+const PARTICLE_COUNT = 19; // 총 입자 수
 
 const Confetti = () => {
   const [particles, setParticles] = useState([]);
