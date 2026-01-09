@@ -11,12 +11,10 @@ import BoardWrite from "./pages/BoardWrite";
 import BoardEdit from "./pages/BoardEdit";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
-import Snow from "./components/Snow";
 
 export default function App() {
   return (
     <Router>
-      <Snow />
       <Layout>
         <Routes>
           <Route path="/main" element={<Main />} />

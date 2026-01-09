@@ -47,43 +47,45 @@ export default function Roulette() {
         return prize.name;
     }
   };
-  const goldPointer = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><path d="M30 60 L0 0 H60 Z" fill="%23FFD700" stroke="%23FFFFFF" stroke-width="2"/><circle cx="30" cy="15" r="8" fill="%23c41e3a" stroke="%23FFFFFF" stroke-width="1"/></svg>`;
+  const lovelyPointer = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><path d="M30 60 L10 10 Q30 0 50 10 Z" fill="%23FFB7B2" stroke="%23FFFFFF" stroke-width="2"/><circle cx="30" cy="20" r="6" fill="%23FFFFFF"/></svg>`;
+
   return (
     <div className="page">
       <div className="header">룰렛 추첨</div>
       <div className="roulette-container">
         <div className="roulette-wheel">
           <Wheel
-            spinDuration={1}
+            spinDuration={0.7}
             startingOptionIndex={Math.floor(Math.random() * data.length)}
             mustStartSpinning={mustSpin}
             prizeNumber={prizeNumber}
             data={data}
             onStopSpinning={StopSpinning}
-            textColors={["#FFFFFF", "#3E3E3E", "#FFFFFF", "#3E3E3E"]}
-            backgroundColors={["#8B0000", "#D4AF37", "#006400", "#FFFDD0"]}
-            outerBorderColor="#FFD700"
-            outerBorderWidth={10}
-            radiusLineColor="#FFD700"
-            radiusLineWidth={2}
+            textColors={["#666666"]}
+            backgroundColors={["#ff9aa2", "#ffb7b2", "#ffdac1", "#e2f0cb", "#b5ead7", "#c7ceea", "#80e9ff", "#ff8fab"]}
+            outerBorderColor="#ffffff"
+            outerBorderWidth={8}
+            radiusLineColor="#ffffff"
+            radiusLineWidth={3}
             fontFamily="Cafe24Ssurround"
-            textDistance="70"
+            textDistance={60}
             responsive
             pointerProps={{
-              src: goldPointer,
+              src: lovelyPointer,
               style: {
-                width: "50px",
-                height: "50px",
-                marginTop: "25px",
-                marginRight: "25px",
-                transform: "rotate(45deg)"
+                width: "60px",
+                height: "60px",
+                marginTop: "10px",
+                marginRight: "10px",
+                transform: "rotate(45deg)",
+                filter: "drop-shadow(0 4px 4px rgba(0,0,0,0.1))"
               }
             }}
           />
         </div>
 
         <button className="spin-button" onClick={handleSpinClick}>
-          {mustSpin ? "추첨 중..." : "돌리기"}
+          {mustSpin ? "추첨 중" : "돌리기"}
         </button>
         {prize.option && (
           <div className="result-popup">

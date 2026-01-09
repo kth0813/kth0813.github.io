@@ -1,7 +1,4 @@
-import {
-  Link
-  // useNavigate
-} from "react-router-dom";
+import { NavLink /* useNavigate*/ } from "react-router-dom";
 // import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 // import { useEffect, useState } from "react";
 
@@ -23,30 +20,42 @@ export default function Left({ onClickLink }) {
   // };
   return (
     <aside className="left-aside">
-      <h2 className="left-title">✨ 메뉴 ✨</h2>
+      <h2 className="left-title">메뉴</h2>
       <nav>
         <ul className="left-menu">
           <li className="left-menu-item">
-            <Link to="/main" className="left-link" onClick={onClickLink}>
+            <NavLink
+              to="/main"
+              className={({ isActive }) => (isActive ? "left-link active" : "left-link")}
+              onClick={onClickLink}
+            >
               메인 화면
-            </Link>
+            </NavLink>
           </li>
           <li className="left-menu-item">
-            <Link to="/yedarm" className="left-link" onClick={onClickLink}>
+            <NavLink
+              to="/yedarm"
+              className={({ isActive }) => (isActive ? "left-link active" : "left-link")}
+              onClick={onClickLink}
+            >
               예닮이란?
-            </Link>
+            </NavLink>
           </li>
           <li className="left-menu-item">
-            <Link to="/roulette" className="left-link" onClick={onClickLink}>
+            <NavLink
+              to="/roulette"
+              className={({ isActive }) => (isActive ? "left-link active" : "left-link")}
+              onClick={onClickLink}
+            >
               룰렛 추첨
-            </Link>
+            </NavLink>
           </li>
-          <li className="left-menu-item">
+          {/* <li className="left-menu-item">
             <Link to="/board" className="left-link" onClick={onClickLink}>
               게시판
             </Link>
           </li>
-          {/* <li className="left-menu-item">
+           <li className="left-menu-item">
             {user ? (
               <div
                 className="left-link"
