@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Left from "./Left";
+import Confetti from "../components/Confetti";
 
 export default function Layout({ children }) {
   const [showMenu, setShowMenu] = useState(false);
@@ -8,6 +9,7 @@ export default function Layout({ children }) {
 
   return (
     <div style={{ display: "flex", minHeight: "100vh", position: "relative" }}>
+      <Confetti />
       <button className="hamburger-button" onClick={() => setShowMenu(!showMenu)}>
         ☰
       </button>
