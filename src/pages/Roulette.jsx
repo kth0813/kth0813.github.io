@@ -55,7 +55,7 @@ export default function Roulette() {
       <div className="roulette-container">
         <div className="roulette-wheel">
           <Wheel
-            spinDuration={0.7}
+            spinDuration={1}
             startingOptionIndex={Math.floor(Math.random() * data.length)}
             mustStartSpinning={mustSpin}
             prizeNumber={prizeNumber}
