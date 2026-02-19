@@ -22,7 +22,7 @@ const list = [
   { name: "서봉규", type: "M", useYn: "Y" },
   { name: "신기락", type: "M", useYn: "Y" },
   { name: "신성호", type: "M", useYn: "Y" },
-  { name: "신예은", type: "F", useYn: "N" },
+  { name: "신예은", type: "F", useYn: "Y" },
   { name: "신지원", type: "F", useYn: "Y" },
   { name: "안예현", type: "M", useYn: "N" },
   { name: "오송현", type: "F", useYn: "Y" },
@@ -41,7 +41,7 @@ const list = [
   { name: "차영광", type: "M", useYn: "Y" },
   { name: "최소민", type: "F", useYn: "Y" },
   { name: "최우석", type: "M", useYn: "Y" },
-  { name: "한예지", type: "F", useYn: "N" },
+  { name: "한예지", type: "F", useYn: "Y" },
   { name: "황유빈", type: "F", useYn: "Y" },
   { name: "목사님", type: "N", useYn: "Y" },
   { name: "부장님", type: "N", useYn: "Y" }
