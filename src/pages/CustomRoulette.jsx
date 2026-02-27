@@ -84,7 +84,7 @@ export default function CustomRoulette() {
             outerBorderWidth="1"
             radiusLineColor="gray"
             radiusLineWidth="1"
-            textDistance="70"
+            textDistance="75"
             responsive
           />
         </div>

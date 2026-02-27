@@ -10,9 +10,12 @@ export default function Roulette() {
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(0);
   const [prize, setPrize] = useState({});
+  const [showPopup, setShowPopup] = useState(false);
+  const [startingOptionIndex] = useState(Math.floor(Math.random() * data.length));
 
   const handleSpinClick = () => {
     setPrize({});
+    setShowPopup(false);
     if (!mustSpin) {
       const pivot = Math.floor(Math.random() * 99 + 1);
       let stack = 0;
@@ -35,6 +38,7 @@ export default function Roulette() {
   const StopSpinning = () => {
     setMustSpin(false);
     setPrize(data[prizeNumber]);
+    setShowPopup(true);
   };
 
   const result = (prize) => {
@@ -56,7 +60,7 @@ export default function Roulette() {
         <div className="roulette-wheel">
           <Wheel
             spinDuration={1}
-            startingOptionIndex={Math.floor(Math.random() * data.length)}
+            startingOptionIndex={startingOptionIndex}
             mustStartSpinning={mustSpin}
             prizeNumber={prizeNumber}
             data={data}
@@ -68,7 +72,7 @@ export default function Roulette() {
             radiusLineColor="#ffffff"
             radiusLineWidth={3}
             fontFamily="Cafe24Ssurround"
-            textDistance={60}
+            textDistance={75}
             responsive
             pointerProps={{
               src: lovelyPointer,
@@ -87,9 +91,9 @@ export default function Roulette() {
         <button className="spin-button" onClick={handleSpinClick}>
           {mustSpin ? "추첨 중" : "돌리기"}
         </button>
-        {prize.option && (
+        {showPopup && prize.option && (
           <div className="result-popup">
-            <button className="close-button" onClick={() => setPrize({})}>
+            <button className="close-button" onClick={() => setShowPopup(false)}>
               X
             </button>
             <div className="result-title">🎉 당첨자 : {result(prize)} 🎉</div>
