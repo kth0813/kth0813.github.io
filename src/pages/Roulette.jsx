@@ -1,12 +1,30 @@
 import { Wheel } from "react-custom-roulette";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import list from "./List";
 
+const TEXT_COLORS = ["#666666"];
+const BACKGROUND_COLORS = ["#ff9aa2", "#ffb7b2", "#ffdac1", "#e2f0cb", "#b5ead7", "#c7ceea", "#80e9ff", "#ff8fab"];
+const LOVELY_POINTER = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><path d="M30 60 L10 10 Q30 0 50 10 Z" fill="%23FFB7B2" stroke="%23FFFFFF" stroke-width="2"/><circle cx="30" cy="20" r="6" fill="%23FFFFFF"/></svg>`;
+const POINTER_PROPS = {
+  src: LOVELY_POINTER,
+  style: {
+    width: "60px",
+    height: "60px",
+    marginTop: "10px",
+    marginRight: "10px",
+    transform: "rotate(45deg)",
+    filter: "drop-shadow(0 4px 4px rgba(0,0,0,0.1))"
+  }
+};
+
 export default function Roulette() {
-  const filteredList = list.filter((member) => member.useYn !== "Y");
-  const data = filteredList.map((member) => {
-    return { ...member, option: member.name, percentage: Math.ceil(100 / filteredList.length) };
-  });
+  const data = useMemo(() => {
+    const filteredList = list.filter((member) => member.useYn !== "Y");
+    return filteredList.map((member) => {
+      return { ...member, option: member.name, percentage: Math.ceil(100 / filteredList.length) };
+    });
+  }, []);
+
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(0);
   const [prize, setPrize] = useState({});
@@ -51,7 +69,6 @@ export default function Roulette() {
         return prize.name;
     }
   };
-  const lovelyPointer = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><path d="M30 60 L10 10 Q30 0 50 10 Z" fill="%23FFB7B2" stroke="%23FFFFFF" stroke-width="2"/><circle cx="30" cy="20" r="6" fill="%23FFFFFF"/></svg>`;
 
   return (
     <div className="page">
@@ -65,8 +82,8 @@ export default function Roulette() {
             prizeNumber={prizeNumber}
             data={data}
             onStopSpinning={StopSpinning}
-            textColors={["#666666"]}
-            backgroundColors={["#ff9aa2", "#ffb7b2", "#ffdac1", "#e2f0cb", "#b5ead7", "#c7ceea", "#80e9ff", "#ff8fab"]}
+            textColors={TEXT_COLORS}
+            backgroundColors={BACKGROUND_COLORS}
             outerBorderColor="#ffffff"
             outerBorderWidth={8}
             radiusLineColor="#ffffff"
@@ -74,17 +91,7 @@ export default function Roulette() {
             fontFamily="Cafe24Ssurround"
             textDistance={75}
             responsive
-            pointerProps={{
-              src: lovelyPointer,
-              style: {
-                width: "60px",
-                height: "60px",
-                marginTop: "10px",
-                marginRight: "10px",
-                transform: "rotate(45deg)",
-                filter: "drop-shadow(0 4px 4px rgba(0,0,0,0.1))"
-              }
-            }}
+            pointerProps={POINTER_PROPS}
           />
         </div>
 

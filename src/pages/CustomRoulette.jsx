@@ -1,5 +1,8 @@
 import { Wheel } from "react-custom-roulette";
-import { useState } from "react";
+import { useState, useMemo } from "react";
+
+const TEXT_COLORS = ["#3E3E3E"];
+const BACKGROUND_COLORS = ["#FFD8D8", "#FAE0D4", "#FAF4C0", "#CEFBC9", "#D9E5FF", "#E8D9FF", "#FFD9EC"];
 
 export default function CustomRoulette() {
   const allList =
@@ -8,14 +11,16 @@ export default function CustomRoulette() {
   const teamList = "트리플에스조,쓰루패스조,함께하조,밝히조,희희^^조";
   const [text, setText] = useState(allList);
 
-  const list = text
-    .split(",")
-    .map((name) => name.trim())
-    .filter(Boolean);
-  const data = [
-    ...list.map((member) => ({ option: member, percentage: Math.ceil(100 / list.length + 1) })),
-    { option: "재도전!", percentage: Math.ceil(100 / list.length + 1) }
-  ];
+  const data = useMemo(() => {
+    const list = text
+      .split(",")
+      .map((name) => name.trim())
+      .filter(Boolean);
+    return [
+      ...list.map((member) => ({ option: member, percentage: Math.ceil(100 / list.length + 1) })),
+      { option: "재도전!", percentage: Math.ceil(100 / list.length + 1) }
+    ];
+  }, [text]);
 
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(0);
@@ -78,8 +83,8 @@ export default function CustomRoulette() {
             prizeNumber={prizeNumber}
             data={data}
             onStopSpinning={StopSpinning}
-            textColors={["#3E3E3E"]}
-            backgroundColors={["#FFD8D8", "#FAE0D4", "#FAF4C0", "#CEFBC9", "#D9E5FF", "#E8D9FF", "#FFD9EC"]}
+            textColors={TEXT_COLORS}
+            backgroundColors={BACKGROUND_COLORS}
             outerBorderColor="gray"
             outerBorderWidth="1"
             radiusLineColor="gray"
